@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family='open sans':wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+    
+        
+
+        function dropMenu(){
+            var dropdownMenuList = window.document.getElementById("dropdownMenuList");
+             var dropdownMenuButton = window.document.getElementById("dropdownMenuButton");
+
+            if (dropdownMenuList.style.display != "flex"){
+                dropdownMenuList.style.display="flex";
+                dropdownMenuButton.style.backgroundColor="darkblue";
+                dropdownMenuButton.style.color="#fff";
+            }else{
+                dropdownMenuList.style.display="none";
+                dropdownMenuButton.style.backgroundColor="transparent";
+                dropdownMenuButton.style.color="#1E3050";
+            }
+         }
+                 
+    </script>
+    <script>
+        
+            function menuIdioma (){
+                var contentIdioma = window.document.getElementById("contentIdioma");
+                var acordeonIdioma = window.document.getElementById("acordeonIdioma");
+                var triggerIdioma = window.document.getElementById("triggerIdioma");
+                var menuArrowIdioma = window.document.getElementById("menuArrowIdioma");
+
+                if(contentIdioma.style.display!="block"){
+                    contentIdioma.style.display="block";
+                    contentIdioma.style.backgroundColor="#1E3050";
+                    menuArrowIdioma.className="fa-solid fa-chevron-up";
+                    acordeonIdioma.style.backgroundColor = "#1E3050";
+                    acordeonIdioma.style.color = "#fff";
+
+                    triggerIdioma.addEventListener('mouseout', () => {
+                        // Change the button's  color
+                        triggerIdioma.style.backgroundColor = "#1E3050";
+                        triggerIdioma.style.color = "#fff";
+                    });
+
+                    
+                }else{
+                    contentIdioma.style.display="none";
+                    menuArrowIdioma.className="fa-solid fa-chevron-down";
+                    contentIdioma.style.backgroundColor="#fff";
+                                      
+                    triggerIdioma.addEventListener('mouseover', () => {
+                        // Change the button's background color
+                        triggerIdioma.style.backgroundColor = "#1E3050";
+                        triggerIdioma.style.color = "#fff";
+                    });
+
+                    triggerIdioma.addEventListener('mouseout', () => {
+                        // Change the button's background color
+                        triggerIdioma.style.backgroundColor = "#fff";
+                        triggerIdioma.style.color = "#1E3050";
+                        acordeonIdioma.style.backgroundColor = "#1E3050";
+                    });
+                    
+                }
+
+            }
+
+            function menuXp (){
+                var contentXp = window.document.getElementById("contentXp");
+                var acordeonXp = window.document.getElementById("acordeonXp");
+                var triggerXp = window.document.getElementById("triggerXp");
+                var menuArrowXp = window.document.getElementById("menuArrowXp");
+
+                if(contentXp.style.display!="block"){
+                    contentXp.style.display="block";
+                    contentXp.style.backgroundColor="#1E3050";
+                    menuArrowXp.className="fa-solid fa-chevron-up";
+                    acordeonXp.style.backgroundColor = "#1E3050";
+                    acordeonXp.style.color = "#fff";
+
+                    triggerXp.addEventListener('mouseout', () => {
+                        // Change the button's  color
+                        triggerXp.style.backgroundColor = "#1E3050";
+                        triggerXp.style.color = "#fff";
+                    });
+
+                    
+                }else{
+                    contentXp.style.display="none";
+                    menuArrowXp.className="fa-solid fa-chevron-down";
+                    contentXp.style.backgroundColor="#fff";
+                                      
+                    triggerXp.addEventListener('mouseover', () => {
+                        // Change the button's background color
+                        triggerXp.style.backgroundColor = "#1E3050";
+                        triggerXp.style.color = "#fff";
+                    });
+
+                    triggerXp.addEventListener('mouseout', () => {
+                        // Change the button's background color
+                        triggerXp.style.backgroundColor = "#fff";
+                        triggerXp.style.color = "#1E3050";
+                        acordeonXp.style.backgroundColor = "#1E3050";
+                    });
+                    
+                }
+
+            }
+            function menuFormacao (){
+                var contentFormacao = window.document.getElementById("contentFormacao");
+                var acordeonFormacao = window.document.getElementById("acordeonFormacao");
+                var triggerFormacao = window.document.getElementById("triggerFormacao");
+                var menuArrowFormacao = window.document.getElementById("menuArrowFormacao");
+
+                if(contentFormacao.style.display!="block"){
+                    contentFormacao.style.display="block";
+                    contentFormacao.style.backgroundColor="#1E3050";
+                    menuArrowFormacao.className="fa-solid fa-chevron-up";
+                    acordeonFormacao.style.backgroundColor = "#1E3050";
+                    acordeonFormacao.style.color = "#fff";
+
+                    triggerFormacao.addEventListener('mouseout', () => {
+                        // Change the button's  color
+                        triggerFormacao.style.backgroundColor = "#1E3050";
+                        triggerFormacao.style.color = "#fff";
+                    });
+
+                    
+                }else{
+                    contentFormacao.style.display="none";
+                    menuArrowFormacao.className="fa-solid fa-chevron-down";
+                    contentFormacao.style.backgroundColor="#fff";
+                                      
+                    triggerFormacao.addEventListener('mouseover', () => {
+                        // Change the button's background color
+                        triggerFormacao.style.backgroundColor = "#1E3050";
+                        triggerFormacao.style.color = "#fff";
+                    });
+
+                    triggerFormacao.addEventListener('mouseout', () => {
+                        // Change the button's background color
+                        triggerFormacao.style.backgroundColor = "#fff";
+                        triggerFormacao.style.color = "#1E3050";
+                        acordeonFormacao.style.backgroundColor = "#1E3050";
+                    });
+                    
+                }
+
+            }
+
+            function menuCursos (){
+                var contentCursos = window.document.getElementById("contentCursos");
+                var acordeonCursos = window.document.getElementById("acordeonCursos");
+                var triggerCursos = window.document.getElementById("triggerCursos");
+                var menuArrowCursos = window.document.getElementById("menuArrowCursos");
+
+                if(contentCursos.style.display!="block"){
+                    contentCursos.style.display="block";
+                    contentCursos.style.backgroundColor="#1E3050";
+                    menuArrowCursos.className="fa-solid fa-chevron-up";
+                    acordeonCursos.style.backgroundColor = "#1E3050";
+                    acordeonCursos.style.color = "#fff";
+
+                    triggerCursos.addEventListener('mouseout', () => {
+                        // Change the button's  color
+                        triggerCursos.style.backgroundColor = "#1E3050";
+                        triggerCursos.style.color = "#fff";
+                    });
+
+                    
+                }else{
+                    contentCursos.style.display="none";
+                    menuArrowCursos.className="fa-solid fa-chevron-down";
+                    contentCursos.style.backgroundColor="#fff";
+                                      
+                    triggerCursos.addEventListener('mouseover', () => {
+                        // Change the button's background color
+                        triggerCursos.style.backgroundColor = "#1E3050";
+                        triggerCursos.style.color = "#fff";
+                    });
+
+                    triggerCursos.addEventListener('mouseout', () => {
+                        // Change the button's background color
+                        triggerCursos.style.backgroundColor = "#fff";
+                        triggerCursos.style.color = "#1E3050";
+                        acordeonCursos.style.backgroundColor = "#1E3050";
+                    });
+                    
+                }
+
+            }
+
+            
+            function menuPerguntas1 (){
+                var contentPerguntas1 = window.document.getElementById("contentPerguntas1");
+                var acordeonPerguntas1 = window.document.getElementById("acordeonPerguntas1");
+                var triggerPerguntas1 = window.document.getElementById("triggerPerguntas1");
+                var menuArrowPerguntas1 = window.document.getElementById("menuArrowPerguntas1");
+
+                if(contentPerguntas1.style.display!="block"){
+                    contentPerguntas1.style.display="block";
+                    menuArrowPerguntas1.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas1.style.display="none";
+                    menuArrowPerguntas1.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+            function menuPerguntas2 (){
+                var contentPerguntas2 = window.document.getElementById("contentPerguntas2");
+                var acordeonPerguntas2 = window.document.getElementById("acordeonPerguntas2");
+                var triggerPerguntas2 = window.document.getElementById("triggerPerguntas2");
+                var menuArrowPerguntas2 = window.document.getElementById("menuArrowPerguntas2");
+
+                if(contentPerguntas2.style.display!="block"){
+                    contentPerguntas2.style.display="block";
+                    menuArrowPerguntas2.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas2.style.display="none";
+                    menuArrowPerguntas2.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+            function menuPerguntas3 (){
+                var contentPerguntas3 = window.document.getElementById("contentPerguntas3");
+                var acordeonPerguntas3 = window.document.getElementById("acordeonPerguntas3");
+                var triggerPerguntas3 = window.document.getElementById("triggerPerguntas3");
+                var menuArrowPerguntas3 = window.document.getElementById("menuArrowPerguntas3");
+
+                if(contentPerguntas3.style.display!="block"){
+                    contentPerguntas3.style.display="block";
+                    menuArrowPerguntas3.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas3.style.display="none";
+                    menuArrowPerguntas3.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+            function menuPerguntas4 (){
+                var contentPerguntas4 = window.document.getElementById("contentPerguntas4");
+                var acordeonPerguntas4 = window.document.getElementById("acordeonPerguntas4");
+                var triggerPerguntas4 = window.document.getElementById("triggerPerguntas4");
+                var menuArrowPerguntas4 = window.document.getElementById("menuArrowPerguntas4");
+
+                if(contentPerguntas4.style.display!="block"){
+                    contentPerguntas4.style.display="block";
+                    menuArrowPerguntas4.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas4.style.display="none";
+                    menuArrowPerguntas4.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+            function menuPerguntas5 (){
+                var contentPerguntas5 = window.document.getElementById("contentPerguntas5");
+                var acordeonPerguntas5 = window.document.getElementById("acordeonPerguntas5");
+                var triggerPerguntas5 = window.document.getElementById("triggerPerguntas5");
+                var menuArrowPerguntas5 = window.document.getElementById("menuArrowPerguntas5");
+
+                if(contentPerguntas5.style.display!="block"){
+                    contentPerguntas5.style.display="block";
+                    menuArrowPerguntas5.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas5.style.display="none";
+                    menuArrowPerguntas5.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+            function menuPerguntas8 (){
+                var contentPerguntas8 = window.document.getElementById("contentPerguntas8");
+                var acordeonPerguntas8 = window.document.getElementById("acordeonPerguntas8");
+                var triggerPerguntas8 = window.document.getElementById("triggerPerguntas8");
+                var menuArrowPerguntas8 = window.document.getElementById("menuArrowPerguntas8");
+
+                if(contentPerguntas8.style.display!="block"){
+                    contentPerguntas8.style.display="block";
+                    menuArrowPerguntas8.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas8.style.display="none";
+                    menuArrowPerguntas8.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+            function menuPerguntas6 (){
+                var contentPerguntas6 = window.document.getElementById("contentPerguntas6");
+                var acordeonPerguntas6 = window.document.getElementById("acordeonPerguntas6");
+                var triggerPerguntas6 = window.document.getElementById("triggerPerguntas6");
+                var menuArrowPerguntas6 = window.document.getElementById("menuArrowPerguntas6");
+
+                if(contentPerguntas6.style.display!="block"){
+                    contentPerguntas6.style.display="block";
+                    menuArrowPerguntas6.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas6.style.display="none";
+                    menuArrowPerguntas6.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+            function menuPerguntas7 (){
+                var contentPerguntas7 = window.document.getElementById("contentPerguntas7");
+                var acordeonPerguntas7 = window.document.getElementById("acordeonPerguntas7");
+                var triggerPerguntas7 = window.document.getElementById("triggerPerguntas7");
+                var menuArrowPerguntas7 = window.document.getElementById("menuArrowPerguntas7");
+
+                if(contentPerguntas7.style.display!="block"){
+                    contentPerguntas7.style.display="block";
+                    menuArrowPerguntas7.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas7.style.display="none";
+                    menuArrowPerguntas7.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+            function menuPerguntas9 (){
+                var contentPerguntas9 = window.document.getElementById("contentPerguntas9");
+                var acordeonPerguntas9 = window.document.getElementById("acordeonPerguntas9");
+                var triggerPerguntas9 = window.document.getElementById("triggerPerguntas9");
+                var menuArrowPerguntas9 = window.document.getElementById("menuArrowPerguntas9");
+
+                if(contentPerguntas9.style.display!="block"){
+                    contentPerguntas9.style.display="block";
+                    menuArrowPerguntas9.className="fa-solid fa-chevron-up";
+                    
+
+                   
+                    
+                }else{
+                    contentPerguntas9.style.display="none";
+                    menuArrowPerguntas9.className="fa-solid fa-chevron-down";
+                                      
+                   
+                    
+                }
+
+            }
+    </script>
+    
+    <style>
+
+      *{
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      } 
+
+      body{
+        justify-content: center;
+      }
+
+      p, h1, h2, h3, h4, li{
+        color: #1E3050;
+      }
+
+      h2{
+        font-size: 2em;
+      }
+      h3{
+        font-size: 1.6em;
+      }
+      h4{
+        font-size: 1.1em;
+      }
+      h5{
+        font-size: 0.9em;
+      }
+
+      a{
+        color: #1E3050;
+      }
+
+      a:hover, a:active{
+        color: #0a66c2;
+      }
+
+      main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em;
+        max-width: 900px;
+        line-height: 1.4;
+      }
+      main li{
+        margin-bottom: 0.5em;
+      }
+      .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .mainHeader{
+        padding: 1rem;
+        margin: .5rem;
+        border: 1px solid #1E3050;
+        border-radius: 1rem;
+        position: relative;     
+      }
+
+      .mainHeader .acordeon{
+        margin: 0 0 0.5em 0;
+      }
+      
+      .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dropdownMenuButton{
+        color: #1E3050;
+        display: inline-block;
+        top: 1rem;
+        right: 1rem;
+        position: absolute;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 0.5em;
+        border: none;
+        font-size: 1.5em;
+        border-radius: 0.3em;
+      }
+      .dropdownMenuList{
+        top: 50px;
+        width: 90%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        position: absolute;
+        text-align: center;
+        z-index: 999;
+      }
+      .dropMenu{
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+        align-items: center;
+        border-radius: 0.4em;
+        background-color: #fff;
+        max-width: max-content;
+      }
+      .dropMenu ul{
+        padding: 0;
+      }
+      .dropdownMenuList a{
+        text-decoration: none;
+      }
+      .dropdownMenuList li{
+        list-style: none;
+      }
+      .dropdownMenuList a{
+        display: block;
+        padding: 1em 2em;
+        list-style: none;
+        color: #1E3050;
+        background-color: #fff;
+      }
+      .dropdownMenuList a:hover{
+        background-color: #0a66c2;
+        color: #fff;
+      }
+
+      .header .myPhoto{
+        width: 200px;
+        border-radius: 50%;
+      }
+
+      .header h1{
+        font-weight: 400;    
+        text-align: center;
+      }
+
+      .header h1 .font-weight-600{
+        font-weight: 600;    
+        text-align: center;
+      }
+
+    .information p{
+        font-size: 1.15rem;
+    }
+   
+    
+
+  
+
+
+    .acordeon{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid #1E3050;
+        border-radius: 1.1rem;
+        color: #1E3050;
+    }
+
+    
+
+    .acordeon .trigger{
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 1rem;
+        color: #1E3050;
+        text-align: left;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    }
+    .acordeon .trigger:hover{
+        color: #fff;
+        background-color: #1E3050;
+        display: flex;
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .acordeon .content{
+        display: none;
+        color: #fff;
+        background-color: #1E3050;
+        line-height: 1.5;
+        padding: 1rem;
+        border-radius: 0 0 1rem 1rem ;
+    }
+
+    .acordeon .content p{
+        color: #fff;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+    .acordeon .content li, .acordeon .content h4, .acordeon .content p{
+        color: #fff;
+    } 
+
+    .acordeon .content li{
+        font-weight: bold;
+    }
+
+    
+    .actionButton{
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 1rem 2rem;
+        text-align: center;
+        justify-self: center;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        border-radius: 1rem;
+        color: #1E3050;
+        text-align: left;
+        cursor: pointer;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+        }
+    .actionButton a, a::selection, a:hover{
+        text-decoration: none;
+        color: #1E3050;
+    }
+    .actionDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    
+    .acordeon .triggerPerguntas{
+        font-size: 1rem;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.8rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 1rem;
+        color: #1E3050;
+        text-align: left;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    }
+    .acordeon .triggerPerguntas i{
+        padding-left: 0.4em;
+    }
+    .acordeon .triggerPerguntas:hover{
+        color: #fff;
+        background-color: #1E3050;
+    }
+   
+    .perguntas .content{
+        color: #1E3050;
+        background-color: transparent;
+        border: none;
+    }
+    .perguntas{
+        border: none;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    }
+    .perguntas .content p, .perguntas .content li, .perguntas .content h3{
+        color: #1E3050;
+        background-color: #fff;
+    }
+    .whatsapp:hover, .whatsapp::selection{
+        border-radius: 1.2em;
+        background-color: #41c352;
+        color: #fff;
+        a{
+            color: #fff;
+        }
+    }
+
+    .verMais:hover, .verMais::selection{
+        border-radius: 1.2em;
+        background-color: #0571D3;
+        color: #fff;
+        a{
+            color: #fff;
+        }
+    }
+    
+    .tratamentoItem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #1E3050;
+        border-radius: 1.1em;
+        padding: 1rem;
+        margin: 0.5rem 0.2rem;
+        text-align: center;
+    }
+    .tratamentoItem i{
+        font-size: 8em;
+        color: #1E3050;
+    }
+    .tratamentoItem p{
+        font-size: 1.4em;
+    }
+
+    .blogItem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #1E3050;
+        border-radius: 1.1em;
+        padding: 1rem;
+        margin: 0.5rem 0.2rem;
+        text-align: center;
+    }
+    .blogItem i{
+        font-size: 8em;
+        color: #1E3050;
+    }
+    .blogItem p{
+        font-size: 1.3em;
+        margin-top: 0;
+        text-align: left;
+        margin: auto 0.5em;
+    }
+    .blogItem a{
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .blogItem figure{
+        margin: 0em;
+    }
+    .blogItem img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .locais{
+        margin-bottom: 2em;
+    }
+
+    .locais section, .locais img{
+        width: 98%;
+    }
+
+    .locais a{
+        text-decoration: none;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        padding: 2em 1em;
+        border-top: 1px solid #f1f1f1;
+        width: 80%;
+        justify-content: space-evenly;
+    }
+    footer ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+        font-size: 2em;
+        justify-content: space-around;
+        width: 40%;
+        max-width: 200px;
+        padding: 0;
+    }
+    footer div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer .cruz{
+            display: none;
+        }
+ 
+    @media only screen and (min-width: 768px) {
+       
+
+        .mainHeader{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1024px;
+            margin: 1rem auto;
+        }
+
+        .header{
+            display: flex;
+            flex-direction: row;
+        }
+        .header .nameANDinformation{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header h1{
+            text-align: left;   
+        }
+
+        .header .myPhoto{
+            margin-right: 2rem; 
+            width: 232px;
+        }
+
+        .information p{
+        font-size: 1.1rem;
+        }
+
+        .tratamentoList{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .tratamentoItem{
+            width: 270px;
+            height: auto;
+            margin: 0.3rem 0.3rem;
+        }
+        .tratamentoItem p{
+            margin-top: 40px;
+            margin-bottom: 8px;
+        }
+
+        .avaliacao .tratamentoItem{
+            width: 290px;
+            height: auto;
+            margin: 0.3rem 0.3rem;
+        }
+
+        .blogList{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+        .blogItem{
+            width: 500px;
+            height: 400px;
+            margin: 0.3rem 0.3rem;
+        }
+        .blogItem img{
+            width: 300px;
+            height: auto;
+        }
+
+        .locais section, .locais img{
+            max-width: 400px;
+        }
+
+    }
+    </style>
+
+</head>
+<body>
+    <div class="mainHeader">
+        <button class="dropdownMenuButton drop"  id="dropdownMenuButton" onclick="dropMenu()"><i class="fa-solid fa-bars drop"></i></button>
+        <div id="dropdownMenuList" class="dropdownMenuList drop">
+            <div class="dropMenu" onclick="dropMenu()">
+                <ul >
+                    <li><a href="#sobreMim">Sobre mim</a></li>
+                    <li><a href="#Avaliacao">Avaliação</a></li>
+                    <li><a href="#tratamento">Tratamento</a></li>
+                    <li><a href="#atendimento">Atendimento</a></li>
+                    <li><a href="#publicoAlvo">Público-alvo</a></li>
+                    <li><a href="#perguntasFrequentes">Perguntas frequentes</a></li>
+                    <li><a href="https://alancruzassis.github.io/portal/blog">Blog</a></li>
+                     <li><a href="#locaisAtendimento">Agendar Consulta</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        <header class="header">
+            <img src="myPhoto.png" alt="foto de Alan" class="myPhoto">
+            <div class="nameANDinformation">
+                <h1>Muito prazer,</br> sou <span class="font-weight-600">Alan Assis</span>!</h1>
+                <div class="information">
+                    <p class="job">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Estudante de Nutrição - UNEB
+                    </p>
+                    <!--<p class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Salvador - BA
+                    </p>
+                    <p class="linkedin">
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn: &nbsp<a href="https://www.linkedin.com/in/alancruzassis">in/alancruzassis</a>
+                    </p>-->
+                </div>
+            </div>
+        </header>
+
+        <h4 style="text-align: left;">
+            Descubra o poder da Nutrição Clínica sob medida para sua saúde e bem-estar.
+        </h4><br>
+    
+
+        <section class="acordeon" id="acordeonIdioma"> 
+            <button class="trigger" id="triggerIdioma" onclick="menuIdioma()">
+                <div>
+                    <i class="fa-solid fa-earth-americas"></i> Idiomas
+                    
+                </div>
+                <i id="menuArrowIdioma" class="fa-solid fa-chevron-down"></i>
+            </button>
+            
+            <div class="content" id="contentIdioma">
+                <ul>
+                    <li>Português <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></li>
+                    <li>Inglês <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></li>
+                </ul>
+                <h5>Por que é importante que o Nutricionista saiba inglês?</h3>
+                <p>O inglês é uma língua utilizada no mundo inteiro. A maior parte dos estudos científicos e diretrizes internacionais de saúde está em inglês. Saber inglês permite um acesso mais rápido e sem distorções a esses conteúdos.</p>
+            </div>
+            
+        </section>
+        <section class="acordeon" id="acordeonXp"> 
+            <button class="trigger" id="triggerXp" onclick="menuXp()">
+                <div>
+                    <i class="fa-solid fa-briefcase"></i> Experiências 
+                    
+                </div>
+                <i id="menuArrowXp" class="fa-solid fa-chevron-down"></i>
+            </button>
+            
+            <div class="content" id="contentXp">
+                <ul>
+                    <li>Hospital Português</li>
+                    <p>Estágio extracurricular<br>
+                    nov 2022 - Atualmente · 1a 2m</p>
+                                  
+                    <li>Clínica da Dor (UNEB)</li>
+                    <p>Estágio extracurricular<br>
+                    Abr 2021 - Jul 2022 · 1a 4m</p>
+
+                    <li>Clínica Geral de Nutrição (UNEB)</li>
+                    <p>Estágio extracurricular<br>
+                    Mai 2021 - Dez 2022 · 7m</p>
+                </ul>
+                
+            </div>
+            
+        </section>
+        <section class="acordeon" id="acordeonFormacao"> 
+            <button class="trigger" id="triggerFormacao" onclick="menuFormacao()">
+                <div>
+                    <i class="fa-solid fa-graduation-cap"></i> Formação 
+                    
+                </div>
+                <i id="menuArrowFormacao" class="fa-solid fa-chevron-down"></i>
+            </button>
+            
+            <div class="content" id="contentFormacao">
+                <ul>
+                    <li>Bacharelado em Nutrição</li>
+                    <p>Universidade do Estado da Bahia - UNEB<br>
+                    2018 - Atualmente · 5a 10m <br><br>
+                    Uma das maiores cargas-horárias para curso de nutrição do país com 4.685 h.
+                    </p>
+                </ul>
+                
+            </div>
+            
+        </section>
+        <section class="acordeon" id="acordeonCursos"> 
+            <button class="trigger" id="triggerCursos" onclick="menuCursos()">
+                <div>
+                    <i class="fa-solid fa-book-open"></i> Cursos 
+                    
+                </div>
+                <i id="menuArrowCursos" class="fa-solid fa-chevron-down"></i>
+            </button>
+            
+            <div class="content" id="contentCursos">
+                <ul>
+                    <li>Hemograma, Anemia e Linfadenopatia</li>
+                    <p>Universidade Federal de Ciências da Saúde / UNASUS <br>
+                    Dez 2019 a Jan 2020</p>
+                                  
+                    <li>Solicitação, Avaliação e Interpretação de Exames Bioquímicos</li>
+                    <p>Núcleo Viver<br>
+                    Nov 2019</p>
+
+                    <li>Síndrome Gripal e COVID-19</li>
+                    <p>Instituto Sírio Libanês de Ensino e Pesquisa<br>
+                    </p>
+
+                    <li>Antropometria e Composição Corporal</li>
+                    <p>UNEB<br>
+                    Set 2019
+                    </p>
+
+                    <li>Alergia alimentar na prática clínica</li>
+                    <p>Qualificar Cursos & Eventos<br>
+                    Mai 2019
+                    </p>
+
+                    <li>Doenças do Aparelho Digestivo</li>
+                    <p>Fiocruz Mato Grosso do Sul / UNASUS<br>
+                    Mai 2019
+                    </p>
+                </ul>
+                
+            </div>
+            
+        </section>
+    </div> <!--mainHeader-->
+
+    <div class="main">
+    <main>
+        <div id="sobreMim" class="about">
+            <h3>Sobre mim</h3>
+            <p>Ajudo pessoas a lidar com diversos desafios de saúde e ter mais saúde e qualidade de vida.<br>
+            </p>
+            <p>Amo tecnologia. Criei, em parceria com colaboradores, diversas soluções tecnológicas aplicadas à saúde. <br><br>
+            Com as ferramentas que eu crio, consigo fazer uma análise mais <b>precisa</b> e <b>eficiente</b> da situação clínica e nutricional dos pacientes que atendo para escolher o melhor tratamento.</p><br>
+
+        </div>
+
+        <div class="about avaliacao" id="Avaliacao">
+            <h3>Minha Avaliação Clínica e Nutricional</h3>
+            <p>A avaliação que eu faço se baseia em quatro métodos:</p>
+            <div class="tratamentoList">
+                <div class="tratamentoItem">
+                    <div><i class="fa-regular fa-file-lines"></i></div>
+                    <p><b>Exame da História</b> detalhado do(a) paciente</p>
+                </div>
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-stethoscope"></i></i></div>
+                    <p><b>Exame Físico</b> completo, da cabeça aos pés</p>
+                </div>
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-ruler-vertical"></i></div>
+                    <p><b>Exame Antropométrico</b> das medidas e composição corporal</p>
+                </div>
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-vial"></i></div>
+                    <p><b>Exame Laboratorial</b> através de exames de sangue, urina e fezes</p>
+                </div>
+            </div>
+            <p>
+                Com a avaliação minuciosa que eu faço, consigo determinar com segurança o <b>Diagnóstico Nutricional</b> dos pacientes.<br><br>
+                Utilizo uma <b> padronização internacional</b> de diagnósticos de nutrição que vai muito além de somente obesidade e deficiências nutricionais.
+            </p><br>
+
+        </div>
+
+        <div id="tratamento" class="about">
+            <h3>Meu Tratamento</h3>
+            <p>Meu tratamento é centrado no(a) paciente e visa enxergá-lo como um todo, não só sua doença ou condição. Prezo pelo seu protagonismo e autonomia e busco tratar a causa do problema. <br>
+            <br>
+            Utilizo ferramentas como: </p>
+            <div class="tratamentoList">
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-clipboard-list"></i></div>
+                    <p><b>Orientações</b> que geram resultados práticos</p>
+                </div>
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-utensils"></i></div>
+                    <p><b>Planos alimentares</b> personalizados</p>
+                </div>
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-jar"></i></div>
+                    <p><b>Suplementos</b>, como nutrientes, compostos bioativos, enzimas, pré e probióticos</p>
+                </div>
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-pills"></i></div>
+                    <p><b>Medicamentos</b> isentos de prescrição médica à base de nutrientes</p>
+                </div>
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-leaf"></i></div>
+                    <p><b>Fitoterápicos</b> com evidências científicas</p>
+                </div>
+                <div class="tratamentoItem">
+                    <div><i class="fa-solid fa-user-doctor"></i></div>
+                    <p><b>Encaminhamentos</b> para outros profissionais de saúde de confiança</p>
+                </div>
+            
+            </div> <!--tratamentoList-->
+                
+            <br>
+            
+
+        </div>
+        <div id="atendimento" class="about">
+            <h3>Meu Atendimento</h3>
+            <h4>Questionário Pré-Consulta</h4>
+            <p>Assim que você agenda a primeira consulta eu te mando um <b>questionário online</b> com perguntas mais simples e burocráticas da minha entrevista clínica que podem ser respondidas fora do consultório.</p>
+            <p>Respondendo a perguntas como <i>nome completo, data de nascimento, telefone, endereço, escolaridade, alergias...</i> a gente consegue ter <b>mais tempo para conversar</b> sobre o que mais importa.</p>
+            <br>
+            <h4>Primeira consulta</h4>
+                <p>Nessa primeira consulta eu faço uma avaliação detalhada utilizando os quatro métodos que citei <a href="#tratamento">acima</a> e te entrego orientações e acordo com você metas que serão revistas na consulta de revisão. Nessa consulta também costumo solicitar exames se for necessário.
+                    <br>
+                    <br>
+                Depois que você sai do consultório eu reservo um tempo para investigar e conectar todas as informações que eu coletei para montar um plano terapêutico completo e eficaz. Utilizando ferramentas tecnológicas que eu mesmo desenvolvi.
+            </p>
+            <br>
+            <h4>Consulta de Revisão</h4>
+            <p>Avalio junto com você se as orientações iniciais estão sendo eficazes e entrego para você o plano terapêutico completo e individualizado. Toda primeira consulta ou consulta de acompanhamento que você faz te dá direito a uma consulta de revisão gratuita dentro do prazo de 30 dias.</p>
+            <br>
+            <h4>Consultas de Acompanhamento</h4>
+            <p>Essas consultas servem para você dar continuidade no tratamento. Casos mais complexos requerem mais tempo de tratamento.</p>
+            <br>
+            <h4>Supervisão semanal</h4>
+            <p>Você não vai ficar perdido(a) nesses 30 dias entre as consultas, meu atendimento inclui um acompanhamento online via whatsapp onde você pode tirar dúvidas, enviar suas dificuldades e receber meus materiais de apoio, investigações comportamentais e de estilo de vida exclusivos para que o seu tratamento tenha resultados.</p><br>
+            <br>
+            <br>
+
+        </div>
+        <div id="publicoAlvo" class="about">
+            <h3>Para quem é?</h3>
+            <p>Esses são alguns dos casos mais frequentes que eu atendo:</p>
+            
+            <h4 id="disturbiosgti">Distúrbios e Doenças Gastrointestinais</h4> 
+                <ul>
+                    <li>Refluxo e Azia (queimação atrás do peito)</li>
+                    <li>Gastrite</li>
+                    <li>Prisão de Ventre (constipação intestinal)</li>
+                    <li>Diarreia</li>
+                    <li>Náuseas, vômitos e enjoo do movimento</li>
+                    <li>Dores abdominais</li>
+                    <li>Gases e Distensão abdominal</li>
+                    <li>Indigestão</li>
+                    <li>Intolerância à lactose</li>
+                    <li>Doenças inflamatórias intestinais (Chron e RCU)</li>
+                    <LI>Doença Celíaca</LI>
+                    <li>Síndrome do intestino irritável</li>
+                    <li>Supercrescimento bacteriano do intestino delgado</li>
+                    <li>Pedra na vesícula (colelitíase)</li>
+                    <li>Pancreatite</li>
+                    <li>Disfagia</li>
+                    <li>Disbiose intestinal</li>
+                </ul>
+                <h4>Distúrbios Metabólicos</h4>
+                <ul>
+                    <li>Diabetes, pré-diabetes e resistência à insulina</li>
+                    <li>Hipertensão</li>
+                    <li>Colesterol alto</li>
+                    <li>Obesidade e sobrepeso</li>
+                    <li>Síndrome metabólica</li>
+                    <li>Erros inatos do metabolismo</li>
+                    <li>Alterações da Tireóide</li>
+                </ul>
+                <h4>Distúrbios Urinários</h4>
+                <ul>
+                    <li>Doença Renal Crônica</li>
+                    <li>Insuficiência Renal Aguda</li>
+                    <li>Síndrome Nefrótica</li>
+                    <li>Pedra no rim (nefrolitíase)</li>
+                    <li>Infecções urinárias de repetição</li>
+                    <li>Hiperplasia Prostática Benigna</li>
+                </ul>
+                <h4>Crianças e Adolescentes</h4>
+                <ul>
+                    <li>Déficit de crescimento em altura</li>
+                    <li>Dificuldade de ganho de peso</li>
+                    <li>Sobrepeso e obesidade</li>
+                    <li>Espinhas (acne)</li>
+                    <li>Seletividade alimentar</li>
+                    <li>Aversão alimentar</li>
+                    <li>Parasitoses intestinais (vermes)</li>
+                    <li>Deficiência de ferro e anemias</li>
+                    <li>Ansiedade</li>
+                </ul>
+                <h4>Transtorno do Espectro Autista com:</h4>
+                <ul>
+                    <li>Seletividade alimentar</li>
+                    <li>Aversão alimentar</li>
+                    <li><a href="#disturbiosgti">Distúrbios gastrointestinais</a></li>
+                </ul>
+                <h4>Transtornos Alimentares</h4>
+                <ul>
+                    <li>Bulimia nervosa</li>
+                    <li>Anorexia nervosa</li>
+                    <li>Transtorno Alimentar Restritivo/Evitativo</li>
+                    <li>Transtorno de Compulsão Alimentar</li>
+                    <li>Ortorexia</li>
+                </ul>
+                <h4>Idosos</h4>
+                <ul>
+                    <li>Desnutrição</li>
+                    <li>Diminuição de massa muscular e força</li>
+                    <li>Falta de Apetite</li>
+                    <li>Acamados</li>
+                    <li>Lesão por pressão</li>
+                    <li>Parkinson</li>
+                    <li>Osteoporose</li>
+                </ul>
+                <h4>Doenças genéticas hereditárias e não hereditárias</h4>
+                <ul>
+                    <li>Cânceres</li>
+                    <li>Fenilcetonúria</li>
+                    <li>Galactosemia</li>
+                    <li>Doença falciforme</li>
+                </ul>
+                <h4>Dores Crônicas</h4>
+                <ul>
+                    <li>Osteoartrite</li>
+                    <li>Fibromialgia</li>
+                    <li>Enxaqueca (migrânea)</li>
+                    <li>Neuralgia do trigêmeo</li>
+                </ul>
+                <h4>Cirurgias</h4>
+                <ul>
+                    <li>Cirurgias orais</li>
+                    <li>Cirurgias gastrointestinais</li>
+                    <li>Cirurgias de grande porte</li>
+                </ul>
+                <h4>Outras situações que atrapalham a qualidade de vida</h4>
+                <ul>
+                    <li>Distúrbios do Sono</li>
+                    <li>Distúrbios Respiratórios de repetição</li>
+                    <li>Resfriados</li>
+                    <li>Doença Pulmonar Obstrutiva Crônica (DPOC)</li>
+                    <li>Alergias Alimentares</li>
+                    <li>Cólicas Menstruais</li>
+                    <li>Sintomas da Menopausa</li>
+                </ul>
+                <h4>Gravidez e Aleitamento</h4>
+                <ul>
+                    <li>Acompanhamento do desenvolvimento fetal</li>
+                    <li>Correção de deficiênicas</li>
+                    <li>Diabetes Gestacional</li>
+                    <li>Doença Hipertensiva Específica da Gravidez</li>
+                    <li>Auxílio na produção de leite materno</li>
+                    <li>Prescrição de fórmulas infantis em casos onde o leite mateno não for possível ou suficiente</li>
+                </ul>
+                <br>
+                <p>O desafio que você enfrenta não está nessa lista? Você	pode perguntar pra mim se eu consigo te ajudar.</p>
+                
+                <div class="actionDiv">
+                    <button class="actionButton whatsapp"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/5599999999999">Falar com Alan</a></button>
+                </div>
+
+                <h3 id="perguntasFrequentes">Perguntas Frequentes</h3>
+                <section class="acordeon perguntas" id="acordeonPerguntas1"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas1" onclick="menuPerguntas1()">
+                        <div>
+                            Quanto tempo duram as consultas?
+                        </div>
+                        <i id="menuArrowPerguntas1" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas1">
+                        <p>A primeira consulta dura pelo menos 01:30 h, a consulta de retorno dura pelo menos 30 min e as demais consultas de acompanhamento duram pelo menos 1h.</p>
+                    </div>
+                    
+                </section>
+                <br>
+                <section class="acordeon perguntas" id="acordeonPerguntas4"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas4" onclick="menuPerguntas4()">
+                        <div>
+                            A consulta dá direito a retorno gratuito ou terei que pagar todas as vezes que for atendido(a)?
+                        </div>
+                        <i id="menuArrowPerguntas4" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas4">
+                        <p>Cada consulta dá direito a um (01) retorno dentro do prazo de 30 dias. Ou seja, se você paga por uma consulta, tem direito a 01 retorno gratuito em até 30 dias. Após esse prazo, já contará como uma nova consulta. 
+                        </p>
+                    </div>
+                    
+                </section>
+                <br>
+                <section class="acordeon perguntas" id="acordeonPerguntas2"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas2" onclick="menuPerguntas2()">
+                        <div>
+                            Qual o valor do atendimento?
+                        </div>
+                        <i id="menuArrowPerguntas2" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas2">
+                        <p>O valor do atendimento varia conforme as clínicas. Confira os valores <a href="#locaisAtendimento">entrando em contato com as clínicas</a>. 
+                        </p>
+                        <p>Para atendimento online ou domiciliar entre em contato comigo pelo whatsapp. </p>
+                        <div class="actionDiv">
+                            <button class="actionButton whatsapp"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/5599999999999">Falar com Alan</a></button>
+                        </div>
+                        <p>Divulgar o valor dos serviços como forma de publicidade é infração ética de acordo com o CFN, por isso não escrevi  esses valores aqui.</p>
+                        
+                    </div>
+                    
+                </section>
+                <br>
+                <section class="acordeon perguntas" id="acordeonPerguntas3"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas3" onclick="menuPerguntas3()">
+                        <div>
+                            Tenho diabetes, você vai me proibir de comer açúcar?
+                        </div>
+                        <i id="menuArrowPerguntas3" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas3">
+                        <p>Não se preocupe, eu não proíbo ninguém de nada porque prezo pelo protagonismo do(a) paciente. Além disso, a Sociedade Brasileira de Diabetes recomenda que pessoas com diabetes possam consumir até 5% das necessidades energéticas diárias provenientes de açúcar. Te surpreendi né?</p>
+
+                        <p>Uma alimentação equilibrada pode incluir açúcar, existem estratégias nutricionais que permitem isso. Não acredite em quem só sabe o que é senso comum.</p>   
+                    </div>
+                </section>
+                <br>
+                <section class="acordeon perguntas" id="acordeonPerguntas8"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas8" onclick="menuPerguntas8()">
+                        <div>
+                            O seu atendimento é adequado para todas as idades?
+                        </div>
+                        <i id="menuArrowPerguntas8" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas8">
+                        <p>Sim. Minha formação na UNEB é generalista e inclui crianças, adolescentes, adultos e idosos.
+                        </p> 
+                        <p>Mas eu não sou faz-tudo. Meu foco é ajudar pessoas com algum desafio de saúde.</p>
+                    </div>
+                </section>
+                <br>
+                <section class="acordeon perguntas" id="acordeonPerguntas5"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas5" onclick="menuPerguntas5()">
+                        <div>
+                            Quem não se beneficiaria do seu atendimento?
+                        </div>
+                        <i id="menuArrowPerguntas5" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas5">
+                        <p>Trabalho com a Nutrição Clínica, isso significa que ajudo pessoas com desafios de saúde. Se você busca melhorar o desempenho em competições esportivas, por exemplo, sugiro que procure um nutricionista que atua na área esportiva.</p>
+                        <p>Mas, se você busca ajuda para algum desafio de saúde pode contar comigo.</p>  
+                    </div>
+                </section>
+                <br>
+                <section class="acordeon perguntas" id="acordeonPerguntas9"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas9" onclick="menuPerguntas9()">
+                        <div>
+                            Você trabalha em parceria com outros profissionais?
+                        </div>
+                        <i id="menuArrowPerguntas9" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas9">
+                        <p>Sim, sempre que necessário e o(a) paciente apresenta algo que não é da minha competência técnica indico diversos profissionais da minha confiança. A lista com esses profissionais está disponível na página <a href="https://alancruzassis.github.io/portal/profissionais-que-indico">Profissionais que eu indico</a></p>
+                    </div>
+                </section>
+                <br>
+                <section class="acordeon perguntas" id="acordeonPerguntas6"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas6" onclick="menuPerguntas6()">
+                        <div>
+                            Posso fazer a consulta online?
+                        </div>
+                        <i id="menuArrowPerguntas6" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas6">
+                        <p>Sim. Mas, por não ser possível realizar exame físico e antropométrico nessa modalidade prefiro que a primeira consulta seja presencial.</p>
+                        <p>Se você mora muito longe posso averiguar se seu desafio de saúde dispensa a consulta presencial. É só entrar em contato comigo.</p>  
+                    </div>
+                </section>
+                <br>
+                <section class="acordeon perguntas" id="acordeonPerguntas7"> 
+                    <button class="triggerPerguntas" id="triggerPerguntas7" onclick="menuPerguntas7()">
+                        <div>
+                            Você atende fora das clínicas?
+                        </div>
+                        <i id="menuArrowPerguntas7" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="content" id="contentPerguntas7">
+                        <p>Sim. Faço atendimento online e domiciliar na casa dos pacientes que não podem ou preferem não sair de casa.
+                        </p> 
+                        <p>Para entender melhor como funcionam meus atendimentos domiciliar e online é só falar comigo.</p> 
+                        <div class="actionDiv">
+                            <button class="actionButton whatsapp" style="background-color: #41c352; color: #fff;"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/5599999999999" style="color: #fff;">Falar com Alan</a></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Posts recentes do blog-->
+                <br>
+                <div class="about">
+                    <h3>Posts recentes do blog</h3>
+                    <div class="blogList">
+                        <div class="blogItem">
+                            <figure><a href="https://alancruzassis.github.io/portal/blog/como-se-preparar-para-consulta-com-nutricionista"><img src="blog/como-se-preparar-para-consulta-com-nutricionista/list.jpg" alt="imagem de lista"></a></figure>
+                            <p><a href="https://alancruzassis.github.io/portal/blog/como-se-preparar-para-consulta-com-nutricionista">Como se preparar para a consulta com o nutricionista</a></p>
+                        </div>
+                        <div class="blogItem">
+                            <figure><a href="https://alancruzassis.github.io/portal/blog/como-o-nutricionista-auxilia-na-melhoria-da-qualidade-do-sono"><img src="blog/como-o-nutricionista-auxilia-na-melhoria-da-qualidade-do-sono/insonia.jpg" alt="imagem de pessoa com insônia"></a></figure>
+                            <p><a href="https://alancruzassis.github.io/portal/blog/como-o-nutricionista-auxilia-na-melhoria-da-qualidade-do-sono">Como o nutricionista auxilia na melhoria da qualidade do sono?</a></p>
+                        </div>
+                        <div class="blogItem">
+                            <figure><a href="https://alancruzassis.github.io/portal/blog/como-o-nutricionista-contribui-para-o-aumento-da-massa-muscular"><img src="./blog/como-o-nutricionista-contribui-para-o-aumento-da-massa-muscular/6962031.jpg" alt="imagem de pessoas se alongando"></a></figure>
+                            <p><a href="https://alancruzassis.github.io/portal/blog/como-o-nutricionista-contribui-para-o-aumento-da-massa-muscular">Como o nutricionista contribui para aumentar a massa muscular?</a></p>
+                        </div>
+                    </div>
+                    <div class="actionDiv">
+                        <button class="actionButton verMais"><a href="https://alancruzassis.github.io/portal/blog">Ver mais posts</a></button>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+
+
+                <!--Meus locais de atendimento-->
+                <h3 id="locaisAtendimento" >Meus locais de atendimento</h3>
+                <section class="locais">
+                    <a href="https://www.google.com/maps/place/Centro+M%C3%A9dico+O+Bom+Doutor/@-12.5075033,-38.9998722,17.77z/data=!4m6!3m5!1s0x715b7ce3a9d0f57:0x6b3be7bc45f88de3!8m2!3d-12.5076591!4d-38.9988706!16s%2Fg%2F11sfrqww2_?entry=ttu"><img src="local-bom-doutor.jpg" alt="Centro Médico Bom Doutor no mapa"></a>
+                    <p><a href="https://www.google.com/maps/place/Centro+M%C3%A9dico+O+Bom+Doutor/@-12.5075033,-38.9998722,17.77z/data=!4m6!3m5!1s0x715b7ce3a9d0f57:0x6b3be7bc45f88de3!8m2!3d-12.5076591!4d-38.9988706!16s%2Fg%2F11sfrqww2_?entry=ttu"><b>Centro Médico O Bom Doutor</b><br>Rua 31 de Março, Conceição da Feira - BA, 44320-000</a></p>
+                    <p><i class="fa-solid fa-phone"></i><b> Telefone: </b><a style="text-decoration: underline;" href="tel:+5571999999999">(71) 9 9999-9999</a></p>
+                    <p><i class="fa-brands fa-whatsapp"></i><b> Whatsapp: </b><a style="text-decoration: underline;" href="https://wa.me/5571999999999">(71) 9 9999-9999</a></p>
+                </section>
+                <section class="locais">
+                    <a href="https://www.google.com/maps/search/63+R.+das+Amendoeiras,+Bahia/@-12.723135,-38.9725296,10z/data=!3m1!4b1?entry=ttu"><img src="local-vittal.jpg" alt="Centro Médico Bom Doutor no mapa"></a>
+                    <p><a href="https://www.google.com/maps/search/63+R.+das+Amendoeiras,+Bahia/@-12.723135,-38.9725296,10z/data=!3m1!4b1?entry=ttu"><b>Pró-Exame policlínica</b><br>Rua das Amoreiras 63, Conceição da Feira - BA, 44320-000</a></p>
+                    <p><i class="fa-solid fa-phone"></i><b> Telefone: </b><a style="text-decoration: underline;" href="tel:+5571999999999">(71) 9 9999-9999</a></p>
+                    <p><i class="fa-brands fa-whatsapp"></i><b> Whatsapp: </b><a style="text-decoration: underline;" href="https://wa.me/5571999999999">(71) 9 9999-9999</a></p>
+                </section>
+                <!--<section class="locais">
+                    <a href="https://www.google.com/maps/search/63+R.+das+Amendoeiras,+Bahia/@-12.723135,-38.9725296,10z/data=!3m1!4b1?entry=ttu"><img src="local-vittal.jpg" alt="Centro Médico Bom Doutor no mapa"></a>
+                    <p><a href="https://www.google.com/maps/search/63+R.+das+Amendoeiras,+Bahia/@-12.723135,-38.9725296,10z/data=!3m1!4b1?entry=ttu"><b>Clínica São Francisco</b><br>Rua Treze de Maio, São Gonçalo dos Campos - BA, 44330-000</a></p>
+                    <p><i class="fa-solid fa-phone"></i><b> Telefone: </b><a style="text-decoration: underline;" href="tel:+557532463647">(75) 3246-3647</a></p>
+                    <p><i class="fa-brands fa-whatsapp"></i><b> Whatsapp: </b><a style="text-decoration: underline;" href="https://wa.me/5571999999999">(71) 9 9999-9999</a></p>
+                </section>-->
+                <br>
+                <h4>Atendimento online e domiciliar</h4>
+                <section class="locais">
+                    <p>Entre em contato comigo para conferir agenda disponível e condições.</p>
+                    <div class="actionDiv">
+                        <button class="actionButton whatsapp"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/5599999999999">Falar com Alan</a></button>
+                    </div>
+                </section>
+
+
+    </div><!--.main-->
+        
+    </main>
+    <footer>
+        <div><span>© 2023 Alan <span class="cruz">Cruz </span>Assis</span></div>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/alancruzassis/"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/dr.alanassis/"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+        </ul>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/27d65a4a33.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>
