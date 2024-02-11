@@ -471,7 +471,7 @@
                     var resultado = document.getElementById('resultado');
 
 
-                    resultado.value = (triggerDrinkType1*triggerDrinkRec1*inputDrinkNumber1)/10;
+                    resultado.value = parseFloat((triggerDrinkType1*triggerDrinkRec1*inputDrinkNumber1)/10).toFixed(2);
 
                 let vgp = resultado.value;
                 data.setValue(0, 1, vgp);
@@ -516,7 +516,7 @@
         <section class="acordeon" id="acordeonIdioma"> 
             <select name="drinkType" class="trigger" id="triggerDrinkRec1" onchange="speedmeter()" oninput="speedmeter()">
                 <option value="0">Selecione</option>
-                <option value="250">Periguete (250mL)</option>
+                <option value="269">Periguete (269mL)</option>
                 <option value="350">Lata (350mL)</option>
                 <option value="413">Latão (413mL)</option>
                 <option value="200">Copo americano (200mL)</option>
@@ -542,6 +542,8 @@
             <input placeholder="Resultado" type="text" readonly name="drinkType" class="trigger" id="resultado">
         </input>              
         </section>
+        <br>
+       
     </div> <!--mainHeader-->
 
 
