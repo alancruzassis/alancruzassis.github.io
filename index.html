@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alan Assis</title>
+    <title>Dr. Alan Assis</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -592,14 +592,17 @@
         color: #fff;
         background-color: #1E3050;
         line-height: 1.5;
-        padding: 1rem;
+        padding: 0rem 1rem 1rem 2rem;
         border-radius: 0 0 1rem 1rem ;
     }
 
     .acordeon .content p{
         color: #fff;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin-bottom: 2rem;
+    }
+    .acordeon .content img{
+        max-width: 70%;
     }
     .acordeon .content li, .acordeon .content h4, .acordeon .content p{
         color: #fff;
@@ -609,7 +612,9 @@
         font-weight: bold;
     }
 
-    
+    .job{
+        line-height: 1.8;
+    }
     .actionButton{
         font-size: 1.2em;
         font-weight: 600;
@@ -694,6 +699,10 @@
         }
     }
     
+    .imgTratamento{
+        width: 70%;
+    }
+
     .tratamentoItem{
         display: flex;
         flex-direction: column;
@@ -868,11 +877,10 @@
         <div id="dropdownMenuList" class="dropdownMenuList drop">
             <div class="dropMenu" onclick="dropMenu()">
                 <ul >
-                    <li><a href="#sobreMim">Sobre mim</a></li>
                     <li><a href="#Avaliacao">Avaliação</a></li>
                     <li><a href="#tratamento">Tratamento</a></li>
                     <li><a href="#atendimento">Atendimento</a></li>
-                    <li><a href="#publicoAlvo">Público-alvo</a></li>
+                    <li><a href="#publicoAlvo">Pra quem é?</a></li>
                     <li><a href="#perguntasFrequentes">Perguntas frequentes</a></li>
                     <li><a href="https://alancruzassis.github.io/portal/blog">Blog</a></li>
                      <li><a href="#locaisAtendimento">Agendar Consulta</a></li>
@@ -887,7 +895,9 @@
                 <div class="information">
                     <p class="job">
                         <i class="fa-solid fa-graduation-cap"></i>
-                        Estudante de Nutrição - UNEB
+                        Nutricionista Generalista - UNEB <br>
+                        <i class="fa-solid fa-medal"></i>
+                        Acreditado internacionalmente
                     </p>
                     <!--<p class="location">
                         <i class="fa-solid fa-location-dot"></i>
@@ -935,18 +945,35 @@
             </button>
             
             <div class="content" id="contentXp">
+                <h4>Já passei por 4 hospitais e 2 clínicas durante a graduação.</h4>
                 <ul>
                     <li>Hospital Português</li>
-                    <p>Estágio extracurricular<br>
-                    nov 2022 - fev 2024 · 1a 3m</p>
-                                  
-                    <li>Clínica da Dor (UNEB)</li>
-                    <p>Estágio extracurricular<br>
-                    Abr 2021 - Jul 2022 · 1a 4m</p>
+                    <br>
+                    <img src="Hospital-Portugues_fachada.webp" alt="fachada do Hospital Português">
+                    <p>Estágio extracurricular | nov 2022 - fev 2024 · 1a 3m</p>
 
-                    <li>Clínica Geral de Nutrição (UNEB)</li>
-                    <p>Estágio extracurricular<br>
-                    Mai 2021 - Dez 2022 · 7m</p>
+                    <li>Hospital Espanhol</li>
+                    <br>
+                    <img src="fachada-hospital-espanhol.jpg" alt="fachada do Hospital Espanhol">
+                    <p>Iniciação Científica | mar 2021 - nov 2022 · 8m</p>
+
+                    <li>Hospital Geral Roberto Santos</li>
+                    <br>
+                    <img src="Hospital_Geral_Roberto_Santos_fachada.jpg" alt="fachada do Hospital Geral Roberto Santos">
+                    <p>Estágio Curricular | nov 2022 - out 2023 · 11m</p>
+
+                    <li>Hospital Couto Maia</li>
+                    <br>
+                    <img src="instituto-couto-maia-fachada.jpg" alt="fachada do Hospital Instituto Couto Maia">
+                    <p>Iniciação Científica | nov 2022 - fev 2024 · 1a 3m</p>
+                                  
+                    <li>Clínica da Dor (CLINDOR / UNEB)</li>
+                    <br>
+                    <img src="fachada-dcv-uneb.jpg" alt="">
+                    <p>Estágio extracurricular | Abr 2021 - Jul 2022 · 1a 4m</p>
+
+                    <li>Clínica Geral de Nutrição (CEAD / UNEB)</li>
+                    <p>Estágio extracurricular | Mai 2021 - Dez 2022 · 7m</p>
                 </ul>
                 
             </div>
@@ -966,7 +993,8 @@
                     <li>Bacharelado em Nutrição</li>
                     <p>Universidade do Estado da Bahia - UNEB<br>
                     2018 - Atualmente · 5a 10m <br><br>
-                    Uma das maiores cargas-horárias para curso de nutrição do país com 4.685 h. <br>
+                    A UNEB é a maior universidade pública do estado da Bahia.<br>
+                    O curso de Nutrição da UNEB tem uma das maiores cargas-horárias do país com 4.685 h. <br>
                     Sendo 435 h destinadas a estágios obrigatórios em ambulatório e hospital. 
                     </p>
                 </ul>
@@ -1059,6 +1087,7 @@
 
         <div id="tratamento" class="about">
             <h3>Meu Tratamento</h3>
+            <img class="imgTratamento" src="fitoterapia_e_suplementacao.png" alt="plano de fundo com a cor #1E3050 ou cores complementares, elementos relacionados à fitoterapia e suplementação">
             <p>Meu tratamento é centrado no(a) paciente e visa enxergá-lo como um todo, não só sua doença ou condição. Prezo pelo seu protagonismo e autonomia e busco tratar a causa do problema. <br>
             <br>
             Utilizo ferramentas como: </p>
@@ -1097,8 +1126,9 @@
         <div id="atendimento" class="about">
             <h3>Meu Atendimento</h3>
             <h4>Questionário Pré-Consulta</h4>
+            <img src="form.jpg" alt="formulário online">
             <p>Assim que você agenda a primeira consulta eu te mando um <b>questionário online</b> com perguntas mais simples e burocráticas da minha entrevista clínica que podem ser respondidas fora do consultório.</p>
-            <p>Respondendo a perguntas como <i>nome completo, data de nascimento, telefone, endereço, escolaridade, alergias...</i> a gente consegue ter <b>mais tempo para conversar</b> sobre o que mais importa.</p>
+            <p>Respondendo a perguntas como <i>data de nascimento, endereço, escolaridade, alergias...</i> a gente consegue ter <b>mais tempo para conversar</b> sobre o que mais importa.</p>
             <br>
             <h4>Primeira consulta</h4>
                 <p>Nessa primeira consulta eu faço uma avaliação detalhada utilizando os quatro métodos que citei <a href="#tratamento">acima</a> e te entrego orientações e acordo com você metas que serão revistas na consulta de revisão. Nessa consulta também costumo solicitar exames se for necessário.
@@ -1121,6 +1151,7 @@
         </div>
         <div id="publicoAlvo" class="about">
             <h3>Para quem é?</h3>
+            <img class="imgTratamento" src="mulher_apontando_para_baixo.jpeg" alt="mulher jovem apontando para baixo com as duas mãos">
             <p>Esses são alguns dos casos mais frequentes que eu atendo:</p>
             
             <h4 id="disturbiosgti">Distúrbios e Doenças Gastrointestinais</h4> 
@@ -1320,7 +1351,7 @@
                     <div class="content" id="contentPerguntas8">
                         <p>Sim. Minha formação na UNEB é generalista e inclui crianças, adolescentes, adultos e idosos.
                         </p> 
-                        <p>Mas eu não sou faz-tudo. Meu foco é ajudar pessoas com algum desafio de saúde.</p>
+                        <p>Mas eu não sou faz-tudo. Meu foco é ajudar pessoas com algum desafio de saúde. A chamada Nutrição Clínica.</p>
                     </div>
                 </section>
                 <br>
@@ -1334,7 +1365,7 @@
                     
                     <div class="content" id="contentPerguntas5">
                         <p>Trabalho com a Nutrição Clínica, isso significa que ajudo pessoas com desafios de saúde. Se você busca melhorar o desempenho em competições esportivas, por exemplo, sugiro que procure um nutricionista que atua na área esportiva.</p>
-                        <p>Mas, se você busca ajuda para algum desafio de saúde pode contar comigo.</p>  
+                        <p>Mas, se você busca ajuda para algum desafio de saúde (como os da lista acima) pode contar comigo.</p>  
                     </div>
                 </section>
                 <br>
@@ -1360,8 +1391,7 @@
                     </button>
                     
                     <div class="content" id="contentPerguntas6">
-                        <p>Sim. Mas, por não ser possível realizar exame físico e antropométrico nessa modalidade prefiro que a primeira consulta seja presencial.</p>
-                        <p>Se você mora muito longe posso averiguar se seu desafio de saúde dispensa a consulta presencial. É só entrar em contato comigo.</p>  
+                        <p>Sim. O atendimento online é realizado através de uma plataforma que garante a privacidade dos seus dados e permite a realização das consultas online. Essas consultas são adaptadas e oriento os pacientes para que minha avaliação consiga ser completa mesmo no ambiente virtual.</p>  
                     </div>
                 </section>
                 <br>
@@ -1437,7 +1467,7 @@
                     <p><i class="fa-brands fa-whatsapp"></i><b> Whatsapp: </b><a style="text-decoration: underline;" href="https://wa.me/5571999999999">(71) 9 9999-9999</a></p>
                 </section>-->
                 <br>
-                <h4>Atendimento online e domiciliar</h4>
+                <h4><i class="fa-solid fa-house-laptop"></i> Atendimento Online e Domiciliar</h4>
                 <section class="locais">
                     <p>Entre em contato comigo para conferir agenda disponível e condições.</p>
                     <div class="actionDiv">
@@ -1450,7 +1480,7 @@
         
     </main>
     <footer>
-        <div><span>© 2023 Alan <span class="cruz">Cruz </span>Assis</span></div>
+        <div><span>© 2023 Dr. Alan <span class="cruz">Cruz </span>Assis</span></div>
         <ul>
             <li><a href="https://www.linkedin.com/in/alancruzassis/"><i class="fa-brands fa-linkedin"></i></a></li>
             <li><a href="https://www.instagram.com/dr.alanassis/"><i class="fa-brands fa-square-instagram"></i></a></li>
