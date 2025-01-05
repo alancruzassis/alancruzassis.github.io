@@ -19,16 +19,30 @@
 
         function dropMenu(){
             var dropdownMenuList = window.document.getElementById("dropdownMenuList");
-             var dropdownMenuButton = window.document.getElementById("dropdownMenuButton");
+            var dropdownMenuButton = window.document.getElementById("dropdownMenuButton");
+            var fabars = window.document.getElementById("fabars");
+ 
 
             if (dropdownMenuList.style.display != "flex"){
+                
                 dropdownMenuList.style.display="flex";
                 dropdownMenuButton.style.backgroundColor="darkblue";
                 dropdownMenuButton.style.color="#fff";
+               
+                const i = document.getElementById("fabars");  // Get the DIV element
+                i.classList.remove("fa-bars"); // Remove mystyle class from DIV
+                i.classList.add("fa-x"); // Add newone class to DIV
+                
+                
             }else{
+            
+
                 dropdownMenuList.style.display="none";
                 dropdownMenuButton.style.backgroundColor="transparent";
                 dropdownMenuButton.style.color="#1E3050";
+                const i = document.getElementById("fabars");  // Get the DIV element
+                i.classList.remove("fa-x"); // Remove mystyle class from DIV
+                i.classList.add("fa-bars"); // Add newone class to DIV
             }
          }
                  
@@ -507,7 +521,7 @@
         border-radius: 0.3em;
       }
       .dropdownMenuList{
-        top: 50px;
+        top: 4em;
         width: 90%;
         display: none;
         flex-direction: column;
@@ -927,7 +941,7 @@
 </head>
 <body>
     <div class="mainHeader">
-        <button class="dropdownMenuButton drop"  id="dropdownMenuButton" onclick="dropMenu()"><i class="fa-solid fa-bars drop"></i></button>
+        <button class="dropdownMenuButton drop"  id="dropdownMenuButton" onclick="dropMenu()" onmouseover="mineFunction()"><i id="fabars" class="fa-solid fa-bars drop"></i></button>
         <div id="dropdownMenuList" class="dropdownMenuList drop">
             <div class="dropMenu" onclick="dropMenu()">
                 <ul >
@@ -1105,7 +1119,7 @@
         <div id="sobreMim" class="about">
             <h3>Sobre mim</h3>
             <img class="imgTratamento" src="alan.jpg" alt="foto de Alan">
-            <p>Ajudo pessoas a <b>lidar com</b> diversos <b>desafios de saúde</b> e ter mais saúde e qualidade de vida.<br>
+            <p>Ajudo pessoas a <b>resolver</b> diversos <b>desafios de saúde</b> e ter mais saúde e qualidade de vida.<br>
             </p>
             <p>Amo tecnologia. Criei, em parceria com colaboradores, diversas soluções tecnológicas aplicadas à saúde. <br><br>
             Com as ferramentas que eu crio, consigo fazer uma <b>análise</b> mais <b>precisa</b> e <b>eficiente</b> da situação clínica e nutricional dos pacientes que atendo para escolher o melhor tratamento.</p><br>
