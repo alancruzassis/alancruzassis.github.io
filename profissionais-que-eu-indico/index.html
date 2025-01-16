@@ -477,7 +477,9 @@
 </head>
 <body>
   <div class="navDiv">
-    <button class="dropdownMenuButton drop"  id="dropdownMenuButton" onclick="dropMenu()"><i class="fa-solid fa-bars drop"></i></button>  
+    <span title="Menu">
+      <button class="dropdownMenuButton drop"  id="dropdownMenuButton" onclick="dropMenu()" onmouseover="mineFunction()"><i id="fabars" class="fa-solid fa-bars drop" aria-label="menu"></i></button> 
+   </span>  
     <nav class="dropMenu" onclick="dropMenu()">
         <div class="dropdownMenuList" id="dropdownMenuList">
           <button class="buttonX"><i class="fa-solid fa-x"></i></button>
@@ -622,13 +624,13 @@
             
     </main>
     <footer>
-      <div><span>© 2023 Alan <span class="cruz">Cruz </span>Assis</span></div>
+      <div><span>© 2023 Dr. Alan <span class="cruz">Cruz </span>Assis</span></div>
       <ul>
-          <li><a href="https://www.linkedin.com/in/alancruzassis/"><i class="fa-brands fa-linkedin"></i></a></li>
-          <li><a href="https://www.instagram.com/dr.alanassis/"><i class="fa-brands fa-square-instagram"></i></a></li>
-          <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/alancruzassis/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/dr.alanassis/" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
+          <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-square-whatsapp" aria-label="WhatsApp"></i></a></li>
       </ul>
-  </footer>
+    </footer>
 
     <script src="https://kit.fontawesome.com/27d65a4a33.js" crossorigin="anonymous"></script>
     
