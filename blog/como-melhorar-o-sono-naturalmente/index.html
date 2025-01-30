@@ -39,8 +39,9 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       } 
 
-      body{
+      body, html{
         justify-content: center;
+        width: 100%;
       }
 
       p, h1, h2, h3, h4, li{
@@ -81,8 +82,11 @@
         flex-direction: column;
         justify-content: center;
         padding: 1em;
+        width: 100%;
         max-width: 900px;
         line-height: 1.8;
+        box-sizing: border-box;
+        max-width: 99%;
       }
       main li{
         margin-bottom: 0.5em;
@@ -91,6 +95,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 100%;
       }
       .mainHeader{
         padding: 1rem;
@@ -419,7 +424,25 @@
     }
     .ref{
         font-size: 0.8em;
+        max-width: 100%;
     }
+    .sobreAutor{
+          border-radius: 50%; 
+          max-width: 170px;
+        }
+        .figureSobre{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 5px;
+          width: 100%;
+        }
+        .figureSobre img{
+          max-width: 150px;
+        }
+        .figureSobre p{
+          text-align: justify;
+        }
     @media only screen and (min-width: 768px) {
        
 
@@ -472,7 +495,20 @@
           height: 80%;
           width: 100%;
         }
-
+        .sobreAutor{
+          border-radius: 50%; 
+          max-width: 170px;
+        }
+        .figureSobre{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+          width: 85%;
+        }
+        .figureSobre img{
+          max-width: 120px;
+        }
 
     }
     </style>
@@ -608,20 +644,23 @@
             <br>
         </div>
             <br>
-            <h4>Referências utilizadas:</h4>
-            <ol class="ref">
+            <div class="ref">
+                <h4>Referências utilizadas:</h4>
+              <ol class="ref">
+                  <li>
+                      Associação Brasileira do Sono - ABSONO. Cartilha do sono. 2019. Disponível em: <a href="https://absono.com.br/wp-content/uploads/2021/03/cartilha_semana_do_sono_2019.pdf">https://absono.com.br/wp-content/uploads/2021/03/cartilha_semana_do_sono_2019.pdf</a>
+                </li>
                 <li>
-                    Associação Brasileira do Sono - ABSONO. Cartilha do sono. 2019. Disponível em: <a href="https://absono.com.br/wp-content/uploads/2021/03/cartilha_semana_do_sono_2019.pdf">https://absono.com.br/wp-content/uploads/2021/03/cartilha_semana_do_sono_2019.pdf</a>
-               </li>
-               <li>
-                Dhand R, Sohal H. Good sleep, bad sleep! The role of daytime naps in healthy adults. Curr Opin Pulm Med. 2006 Nov;12(6):379-82. doi: 10.1097/01.mcp.0000245703.92311.d0. PMID: 17053484.
-               </li>
-               <li>Rahman SA, St Hilaire MA, Lockley SW. The effects of spectral tuning of evening ambient light on melatonin suppression, alertness and sleep. Physiol Behav. 2017 Aug 1;177:221-229. doi: 10.1016/j.physbeh.2017.05.002. Epub 2017 May 1. PMID: 28472667; PMCID: PMC5536841.</li>
-               <li>
-                Chellappa SL, Steiner R, Blattner P, Oelhafen P, Götz T, Cajochen C. Non-visual effects of light on melatonin, alertness and cognitive performance: can blue-enriched light keep us alert? PLoS One. 2011 Jan 26;6(1):e16429. doi: 10.1371/journal.pone.0016429. PMID: 21298068; PMCID: PMC3027693.
-               </li>
-               <li>Jameson JL. Medicina Interna de Harrison - 2 Volumes. (20th edição). Grupo A; 2019.</li>
-            </ol>
+                  Dhand R, Sohal H. Good sleep, bad sleep! The role of daytime naps in healthy adults. Curr Opin Pulm Med. 2006 Nov;12(6):379-82. doi: 10.1097/01.mcp.0000245703.92311.d0. PMID: 17053484.
+                </li>
+                <li>Rahman SA, St Hilaire MA, Lockley SW. The effects of spectral tuning of evening ambient light on melatonin suppression, alertness and sleep. Physiol Behav. 2017 Aug 1;177:221-229. doi: 10.1016/j.physbeh.2017.05.002. Epub 2017 May 1. PMID: 28472667; PMCID: PMC5536841.</li>
+                <li>
+                  Chellappa SL, Steiner R, Blattner P, Oelhafen P, Götz T, Cajochen C. Non-visual effects of light on melatonin, alertness and cognitive performance: can blue-enriched light keep us alert? PLoS One. 2011 Jan 26;6(1):e16429. doi: 10.1371/journal.pone.0016429. PMID: 21298068; PMCID: PMC3027693.
+                </li>
+                <li>Jameson JL. Medicina Interna de Harrison - 2 Volumes. (20th edição). Grupo A; 2019.</li>
+              </ol>
+            </div>
+            
 
         <div class="about">
           <h2>Posts recentes do blog</h2>
@@ -645,6 +684,13 @@
           <br>
           <div class="actionDiv">
             <button class="actionButton whatsapp"><a href="https://alancruzassis.github.io/blog">Ver mais posts</a></button>
+        </div>
+        <div style="margin-top: 90px;">
+          <h3>Sobre o autor</h3>
+          <figure class="figureSobre">
+            <img class="sobreAutor" src="../../myPhoto.webp" alt="Dr. Alan Assis">
+            <p><b>Dr. Alan Assis</b> é Nutricionista Generalista formado pela UNEB, a maior universidade pública do estado da Bahia. Passou por 4 hospitais, 2 clínicas, foi coordenador por 2 vezes de Centro Acadêmico de Curso e ministrou diversas monitorias.</p>
+          </figure>
         </div>
     </main>
     <footer>
