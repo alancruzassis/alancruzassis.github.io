@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neste artigo escrito pelo Dr. Alan Assis você vai entender os principais componentes no Exame Antropométrico, como cada análise é obtida e o que significam.">
+    <title>Interpretação do Laudo Antropométrico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family='open sans':wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="../icon2.ico" >
+	  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+
+    <script>
+      function dropMenu(){
+            var dropdownMenuList = window.document.getElementById("dropdownMenuList");
+             var dropdownMenuButton = window.document.getElementById("dropdownMenuButton");
+
+            if (dropdownMenuList.style.display != "flex"){
+                dropdownMenuList.style.display="flex";
+                dropdownMenuButton.style.backgroundColor="darkblue";
+                dropdownMenuButton.style.color="#fff";
+            }else{
+                dropdownMenuList.style.display="none";
+                dropdownMenuButton.style.backgroundColor="transparent";
+                dropdownMenuButton.style.color="#1E3050";
+            }
+         }
+    </script>   
+    <style>
+
+      *{
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      } 
+
+      body, html{
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+      }
+
+      p, h1, h2, h3, h4, li{
+        color: #1E3050;
+      }
+      h1{
+        font-size: 1.8em;
+        font-weight: 600;
+      }
+
+      h2{
+        font-size: 1.3em;
+      }
+      h3{
+        font-size: 1.1em;
+      }
+      h4{
+        font-size: 0.9em;
+        color: #1E3050;
+      }
+
+      a{
+        color: #1E3050;
+      }
+
+      a:hover, a:active{
+        color: #0a66c2;
+      }
+      .blogItem a:hover, a:active{
+        text-decoration: underline !important;
+      }
+      .navDiv{
+        display: block;
+        height: 10px;
+      }
+      main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em;
+        max-width: 900px;
+        line-height: 1.8;
+        box-sizing: border-box;
+      }
+      main li{
+        margin-bottom: 0.5em;
+      }
+      .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 99%;
+      }
+      .mainHeader{
+        padding: 1rem;
+        margin: .5rem;
+        border: 1px solid #1E3050;
+        border-radius: 1rem;
+        position: relative;     
+      }
+
+      .mainHeader .acordeon{
+        margin: 0 0 0.5em 0;
+      }
+      
+      .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dropdownMenuButton{
+        color: #1E3050;
+        display: inline-block;
+        top: 0;
+        right: 0;
+        position: absolute;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 0.5em;
+        border: none;
+        font-size: 1.5em;
+        border-radius: 0.3em;
+      }
+      .dropdownMenuList{
+        top: 0px;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        position: absolute;
+        text-align: center;
+        z-index: 999;
+        background-color: #fff;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+      }
+      .dropMenu{
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+        align-items: center;
+        border-radius: 0.4em;
+        background-color: #fff;
+        max-width: 9000px;
+      }
+      .dropMenu ul{
+        padding: 0;
+      }
+      .dropdownMenuList ul{
+        width: 99%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .dropdownMenuList a{
+        text-decoration: none;
+      }
+      .dropdownMenuList li{
+        list-style: none;
+        border-bottom: 0.5px solid #f1f1f1;
+        width: 85%;
+      }
+      .dropdownMenuList a{
+        display: block;
+        padding: 1em 2em;
+        list-style: none;
+        color: #1E3050;
+        background-color: #fff;
+      }
+      .dropdownMenuList a:hover{
+        background-color: #0a66c2;
+        color: #fff;
+      }
+
+      .header .myPhoto{
+        width: 200px;
+        border-radius: 50%;
+      }
+
+      .header h1{
+        font-weight: 400;    
+        text-align: center;
+      }
+
+      .header h1 .font-weight-600{
+        font-weight: 600;    
+        text-align: center;
+      }
+
+    .information p{
+        font-size: 1.15rem;
+    }
+   
+    
+
+  
+
+
+    .acordeon{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid #1E3050;
+        border-radius: 1.1rem;
+        color: #1E3050;
+    }
+
+    
+
+    .acordeon .trigger{
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 1rem;
+        color: #1E3050;
+        text-align: left;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    }
+    .acordeon .trigger:hover{
+        color: #fff;
+        background-color: #1E3050;
+        display: flex;
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .acordeon .content{
+        display: none;
+        color: #fff;
+        background-color: #1E3050;
+        line-height: 1.5;
+        padding: 1rem;
+        border-radius: 0 0 1rem 1rem ;
+    }
+
+    .acordeon .content p{
+        color: #fff;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+    .acordeon .content li, .acordeon .content h4, .acordeon .content p{
+        color: #fff;
+    } 
+
+    .acordeon .content li{
+        font-weight: bold;
+    }
+
+    
+    .actionButton{
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 1rem 2rem;
+        text-align: center;
+        justify-self: center;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        border-radius: 1rem;
+        color: #1E3050;
+        text-align: left;
+        cursor: pointer;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+        }
+    .actionButton a, a::selection, a:hover{
+        text-decoration: none;
+        color: #1E3050;
+    }
+    .actionDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    
+    .acordeon .triggerPerguntas{
+        font-size: 1rem;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.8rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 1rem;
+        color: #1E3050;
+        text-align: left;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    }
+    .acordeon .triggerPerguntas i{
+        padding-left: 0.4em;
+    }
+    .acordeon .triggerPerguntas:hover{
+        color: #fff;
+        background-color: #1E3050;
+    }
+   
+    .perguntas .content{
+        color: #1E3050;
+        background-color: transparent;
+        border: none;
+    }
+    .perguntas{
+        border: none;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.141), 0 1px 3px 0 rgba(0,0,0,0.122);
+    }
+    .perguntas .content p, .perguntas .content li, .perguntas .content h2{
+        color: #1E3050;
+        background-color: #fff;
+    }
+    .whatsapp:hover, .whatsapp::selection{
+        border-radius: 1.2em;
+        background-color: #1E3050;
+        color: #fff;
+        a{
+            color: #fff;
+        }
+    }
+
+    figure{
+        margin: 0;
+    }
+    
+    #imgList{
+        width: 340px;
+    }
+
+    .blogItem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #1E3050;
+        border-radius: 1.1em;
+        padding: 1rem;
+        margin: 0.5rem 0.2rem;
+        text-align: center;
+    }
+    .blogItem i{
+        font-size: 8em;
+        color: #1E3050;
+    }
+    .blogItem p{
+        font-size: 1.2em;
+        margin-top: 0;
+        text-align: left;
+        margin: auto 0.5em;
+    }
+    .blogItem a{
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .blogItem figure{
+        margin: 0em;
+    }
+    .blogItem img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .buttonX{
+      padding: 0.5em;
+      background-color: #fff;
+      color: #1E3050;
+      border: none;
+      margin: 1px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 0.1em;
+    }
+    .buttonX:hover{
+      background-color: #0a66c2;
+      color: #fff;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        padding: 2em 1em;
+        border-top: 1px solid #f1f1f1;
+        width: 80%;
+        justify-content: space-evenly;
+        margin-top: 3em;
+    }
+    footer ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+        font-size: 2em;
+        justify-content: space-around;
+        width: 40%;
+        max-width: 200px;
+        padding: 0;
+    }
+    footer div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer .cruz{
+        display: none;
+    }
+    .ref{
+        font-size: 0.8em;
+        max-width: 100%;
+    }
+    .sobreAutor{
+          border-radius: 50%; 
+          max-width: 170px;
+          box-shadow: 0px 1px 3px 0.5px gray;
+        }
+        .figureSobre{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 5px;
+          width: 100%;
+        }
+        .figureSobre img{
+          max-width: 150px;
+        }
+        .figureSobre p{
+          text-align: justify;
+        }
+        .figureTexto{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
+          width: 100%;
+        }
+        .figureTexto img{
+          max-width: 300px;
+          border-radius: 50%;
+          box-shadow: 0px 2px 5px 1px gray;
+        }
+    @media only screen and (min-width: 768px) {
+        h1{
+            font-size: 2.2em;
+        }
+        #imgList{
+            width: 600px;
+        }
+        .mainHeader{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1024px;
+            margin: 1rem auto;
+        }
+
+        .header{
+            display: flex;
+            flex-direction: row;
+        }
+        .header .nameANDinformation{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header h1{
+            text-align: left;   
+        }
+
+        .header .myPhoto{
+            margin-right: 2rem; 
+            width: 232px;
+        }
+
+        .information p{
+          font-size: 1.1rem;
+        }
+        .blogList{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+        .blogItem{
+            width: 500px;
+            height: 400px;
+            margin: 0.3rem 0.3rem;
+        }
+        .blogItem img{
+            width: auto;
+            height: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+        .blogItem figure{
+          height: 80%;
+          width: 100%;
+        }
+        .sobreAutor{
+          border-radius: 50%; 
+          max-width: 170px;
+        }
+        .figureSobre{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+          width: 85%;
+        }
+        .figureSobre img{
+          max-width: 120px;
+        }
+
+    }
+    </style>
+
+</head>
+<body>
+  <div class="navDiv">
+    <span title="Menu">
+      <button class="dropdownMenuButton drop"  id="dropdownMenuButton" onclick="dropMenu()" onmouseover="mineFunction()" aria-label="menu"><i id="fabars" class="fa-solid fa-bars drop"></i></button> 
+   </span> 
+    <nav class="dropMenu" onclick="dropMenu()">
+        <div class="dropdownMenuList" id="dropdownMenuList">
+          <button class="buttonX"><i class="fa-solid fa-x"></i></button>
+          <ul  >
+            <li ><a href="https://alancruzassis.github.io/blog">Início</a></li>
+            <li><a href="https://alancruzassis.github.io/materiais-gratuitos">Materiais gratuitos</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="main">
+    <main>
+      <header>
+        <div class="nameANDinformation">
+                <h1>Interpretação do Laudo Antropométrico</h1>
+        </div>
+            <figure>
+                <img src="Laudo-Antropométrico.jpg" id="imgList" alt="Laudo Antropométrico" style="box-shadow: 0px 2px 5px 1px gray;">
+            </figure>
+      </header>
+        <div id="sobreMim" class="about">
+            <p>
+                O Exame Antropométrico avalia não só a massa corporal através do peso e da circunferência do braço, mas também revela o porcentual de gordura corporal, a distribuição da gordura e os riscos associados. Além disso, avalia o nível de massa muscular e contribui para o acompanhamento preciso da evolução ao longo do tempo.
+            </p>
+            <h2>Análise da Massa Corporal</h2>
+                <p>
+                    O peso do corpo é resultado da soma da água presente nele, proteínas, minerais e massa de gordura. Manter uma massa corporal adequada contribui para prevenir e tratar diversas doenças como cardiovasculares, articulares e metabólicas.
+                </p>
+                <h2>Circunferência do Braço (CB)</h2>
+                <p>
+                    A CB é a medida em centímetros do perímetro do braço na região média entre o ombro e o cotovelo. Alterações nas quantidades de músculo, gordura e conteúdo ósseo interferem nessa análise.
+                </p>
+                <h2>Adequação de CB</h2>
+                <p>
+                        A Adequação de CB mede o quão distante um resultado de CB está da média para pessoas saudáveis na mesma faixa etária e sexo.
+                </p>                
+                <h2>Índice de Massa Corporal (IMC)</h2>
+                <p>
+                    É a relação entre peso e altura. Com esse índice é possível saber se uma pessoa tem muita ou pouca massa para sua altura. Mas esse índice não diferencia músculo e gordura por exemplo.
+                </p>
+                <h2>Circunferência da Cintura (CC)</h2>
+                <p>É uma medida realiza entre o osso do quadril e a última costela. Se correlaciona com o nível de gordura visceral, gordura localizada ao redor dos órgãos internos, considerada a mais perigosa para o desenvolvimento de doenças e complicações.</p>
+                <h2>Razão Cintura/Estatura</h2>
+                <p>É a divisão entre a medida do perímetro da cintura em centímetros e a altura também em centímetros. Resultados superiores a 0,5 estão correlacionados a mais gordura visceral, dislipidemias e doenças do fígado.</p>
+                <h2>Dobra Cutânea Tricipital (DCT)</h2>
+                <figure class="figureTexto">
+                    <img src="Plicometro.webp" alt="Medição da DCT">
+                </figure>
+                <p>
+                    Também conhecida como Prega Cutânea Tricipital, a DCT mede diretamente a gordura localizada no braço, isso porque a medida envolve apenas as camadas da pele: epiderme, derme, e hipoderme (onde está localizada a gordura). Isolando a gordura também é possível por diferença saber a quantidade de massa magra.
+                </p>
+                <h2>Dobra Cutânea Bicipital (DCB)</h2>
+                <p>
+                    Em geral, a gordura no braço está distribuída de forma diferente anterior e posteriormente. Por esse motivo a análise da DCB é necessária para estimar a massa adiposa no braço.
+                </p>
+                <h2>Dobra Cutânea Subescapular (DCSE)</h2>
+                <p>
+                    Medida da espessura da pele na região das costas abaixo da escápula, osso conhecido popularmente como pá das costas. Essa medida é por si só um indicador e quando comparada a populações saudáveis fornece elementos para avaliar o nível de gordura no organismo.
+                </p>
+                <h2>Dobra Cutânea Suprailíaca (DCSI)</h2>
+                <p>
+                    Medida da espessura da pele na região imediatamente acima do osso do quadril, sua porção superior é chamada de Íleo, daí o nome suprailíaca (acima do Íleo). Essa medida contribui para uma avaliação global da gordura no corpo, com ela é possível saber o percentual de gordura.
+                </p>
+                <h2>Somatório de 4 dobras</h2>
+                <p>
+                    É a soma das medidas da pele em milímetros no braço (anterior e posterior), nas costas e no abdome.
+                </p>
+                <h2>Somatório de 2 dobras</h2>
+                <p>
+                    É a soma das medidas da pele no braço (posterior) e costas. Utilizada principalmente na avaliação de crianças e adolescentes de 5 a 19 anos.
+                </p>
+                <h2>Gordura Corporal Total (PGC)</h2>
+                <p>
+                    Mais conhecido como Percentual de Gordura Corporal mede a partir do somatório de dobras cutâneas o percentual de gordura no organismo. Isto é, se uma pessoa pesa 100 kg e tem 20% de gordura corporal total, ela tem 20kg apenas de gordura.
+                </p>
+                <p>Os valores ideais de percentual de gordura variam de acordo com o sexo e a faixa etária.</p>
+                <h2>Circunferência Muscular do Braço</h2>
+                <p>
+                    Parâmetro que avalia a reserva de tecido muscular (sem correção da área óssea). É obtida a partir dos valores da circunferência e dobra cutânea do braço.
+                </p>
+                <h2>Área Muscular do Braço corrigida (AMBc)</h2>
+                <p>
+                    Avalia a reserva de tecido muscular corrigindo a área óssea. Reflete de forma mais precisa as alterações do tecido muscular do que a CMB, no entanto em situações de alteração do conteúdo mineral ósseo, como em idosos, a CMB se torna mais fidedigna.
+                </p>
+                <br>
+                <h2>Conclusão</h2>
+                <p>
+                    A interpretação do laudo antropométrico é essencial para avaliar o estado nutricional e monitorar a composição corporal de forma precisa. Através das diversas medidas analisadas - como circunferências, dobras cutâneas e índices antropométricos -, é possível identificar riscos metabólicos, acompanhar o progresso e orientar estratégias personalizadas para a promoção da saúde.
+                </p>
+                <p>
+                    Embora o exame antropométrico seja um método acessível e amplamente utilizado, é importante interpretá-lo dentro de um contexto clínico e individualizado levando em consideração também outras análises como exame físico e exames laboratoriais. Resultados isolados podem não refletir a realidade completa do paciente, sendo fundamental a avaliação conjunta com outros parâmetros de saúde.
+                </p>
+                <p>
+                    Por isso, contar com a orientação de um profissional capacitado permite uma melhor compreensão dos dados e um direcionamento adequado para intervenções eficazes para promover saúde, qualidade de vida e bem-estar a longo prazo.
+                </p>
+            <br>
+        </div>
+            <br>
+            <div class="ref">
+                <h4>Referências utilizadas:</h4>
+              <ol class="ref">
+                  <li>
+                    Cuppari L. Nutrição clínica no adulto 4a ed.. (4th edição). Editora Manole; 2019.
+                </li>
+                <li>
+                    Ben-Noun, L., Laor, A. Relationship of neck circumference to cardiovascular risk factors. Obesity Research, 11(2): 226-231, 2003. 
+                </li>
+                <li>
+                    Frisancho, A. R. Anthropometric Standards for the Assessment of Growth and Nutritional Status. University of Michigan, p. 189, 1990. 
+                </li>
+                <li>
+                    National Institutes of Health (NIH publication n. 00-4084). The practical guide identification, evaluation, and treatment of overweight and obesity in adults. Bethesda, MD: 2000. 
+                </li>
+                <li>
+                    Taylor, R. W., et al. Evaluation of waist circumference, waist-to-hip ratio, and the conicity index as screening tools for high trunk fat mass, as measured by dual-energy X-ray absorptiometry, in children aged 3-19 y. The American Journal of Clinical Nutrion, 72: 490-495, 2000.
+                </li>
+                <li>
+                    WORD HEALTH ORGANIZATION. Obesity: preventing and managing the global epidemic of obesity. Report of the WHO Consultation of Obesity. Geneva, 3-5 June, 1997. 
+                </li>
+              </ol>
+            </div>
+          
+        <div style="margin-top: 90px;">
+          <h3>Sobre o autor</h3>
+          <figure class="figureSobre">
+            <img class="sobreAutor" src="../myPhoto.webp" alt="Dr. Alan Assis">
+            <p><b>Dr. Alan Assis</b> é Nutricionista Generalista formado pela UNEB, a maior universidade pública do estado da Bahia. Passou por 4 hospitais, 2 clínicas, foi coordenador por 2 vezes de Centro Acadêmico de Curso e ministrou diversas monitorias.</p>
+          </figure>
+          <br>
+          <div class="actionDiv">
+            <button class="actionButton whatsapp"><a href="https://alancruzassis.github.io/blog">Saiba mais</a></button>
+        </div>
+        </div>
+    </main>
+    <footer>
+      <div><span>© 2025 Dr. Alan <span class="cruz">Cruz </span>Assis</span></div>
+      <ul>
+          <li><a href="https://www.linkedin.com/in/alancruzassis/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/dr.alanassis/" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
+          <li><a href="https://wa.me/5571999999999" aria-label="WhatsApp"><i class="fa-brands fa-square-whatsapp" aria-label="WhatsApp"></i></a></li>
+      </ul>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/27d65a4a33.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>
