@@ -8,8 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family='open sans':wght@400;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -19,7 +18,7 @@
 
       *{
         box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Montsserat', sans-serif;
       } 
 
       body{
@@ -31,16 +30,16 @@
       }
 
       h2{
-        font-size: 2em;
+        font-size: 1.8em;
       }
       h3{
-        font-size: 1.4em;
+        font-size: 1.2em;
       }
       h4{
-        font-size: 1.1em;
+        font-size: 0.9em;
       }
       h5{
-        font-size: 0.9em;
+        font-size: 0.7em;
       }
 
       a{
@@ -471,7 +470,14 @@
                     var resultado = document.getElementById('resultado');
 
 
-                    resultado.value = parseFloat((triggerDrinkType1*triggerDrinkRec1*inputDrinkNumber1)/10).toFixed(2);
+                    resultado.value = parseFloat((triggerDrinkType1*triggerDrinkRec1*inputDrinkNumber1)/10*0.8).toFixed(2);
+
+                    var resultado2 = document.getElementById('resultado2');
+                    resultado2.value = parseFloat((triggerDrinkType1*triggerDrinkRec1*inputDrinkNumber1)/10*0.8*70).toFixed(0)+' kcal por semana';
+
+                    var result3 = parseFloat(triggerDrinkType1*triggerDrinkRec1*inputDrinkNumber1/10*0.8*70/150*4.5).toFixed(1);
+                    var paes = document.getElementById('paes');
+                    paes.innerHTML="Equivalente a "+result3+" pães por mês.";
 
                 let vgp = resultado.value;
                 data.setValue(0, 1, vgp);
@@ -499,12 +505,12 @@
             </div>
         </header>
     
-        <h3>Tipo de bebida</h3>
+        <h3>Tipo de bebida <i class="fa-solid fa-wine-bottle"></i></h3>
         <section class="acordeon" id="acordeonIdioma"> 
             <select name="drinkType" class="trigger" id="triggerDrinkType1" onchange="speedmeter()" oninput="speedmeter()">
                 <option value="0">Selecione</option>
                 <option value="0.05">Cerveja</option>
-                <option value="0.12">Vinho</option>
+                <option value="0.125">Vinho</option>
                 <option value="0.4">Vodka</option>
                 <option value="0.4">Uísque</option>
                 <option value="0.4">Cachaça</option>
@@ -512,7 +518,7 @@
                 <option value="0.4">Tequila</option>
             </select>              
         </section>
-        <h3>Recipiente</h3>
+        <h3>Recipiente <i class="fa-solid fa-wine-glass-empty"></i></h3>
         <section class="acordeon" id="acordeonIdioma"> 
             <select name="drinkType" class="trigger" id="triggerDrinkRec1" onchange="speedmeter()" oninput="speedmeter()">
                 <option value="0">Selecione</option>
@@ -523,6 +529,7 @@
                 <option value="250">Copo médio (250mL)</option>
                 <option value="300">Copo grande (300mL)</option>
                 <option value="150">Taça (150mL)</option>
+                <option value="1">Mililitros (mL)</option>
             </select>              
         </section>
         <h3>Quantidade por semana</h3>
@@ -540,7 +547,21 @@
         <h3>Doses de álcool por semana</h3>
         <section class="acordeon" id="acordeonIdioma"> 
             <input placeholder="Resultado" type="text" readonly name="drinkType" class="trigger" id="resultado">
-        </input>              
+        </input>
+        </section>
+        <br>
+        <h3>Calorias do álcool</h3>
+        <section class="acordeon">
+            <input placeholder="Resultado" type="text" readonly class="trigger" id="resultado2">    
+        </input>
+        </section>
+        <p style="margin-left: 1em; " id="paes"></p>              
+        </section>
+        <section>
+            <BR></BR>
+            <h3>Implicações</h3>
+            <p>Não há dose, por menor que seja, com risco zero à saúde segundo a OMS. Quanto menor for a ingestão de álcool, menor o risco de desenvolver doenças relacionadas a esse hábito, como problemas no coração, alguns tipos de câncer, cirrose hepática, distúrbios mentais e alcoolismo, sofrer ou provocar acidentes e se envolver em violência física.</p>
+            
         </section>
         <br>
        
@@ -550,7 +571,7 @@
         
     
     <footer>
-        <div><span>© 2024 Alan <span class="cruz">Cruz </span>Assis</span></div>
+        <div><span>© 2024 <a href="https://alancruzassis.github.io">Dr. Alan Assis</a></span></div>
         <ul>
             <li><a href="https://www.linkedin.com/in/alancruzassis/"><i class="fa-brands fa-linkedin"></i></a></li>
             <li><a href="https://www.instagram.com/dr.alanassis/"><i class="fa-brands fa-square-instagram"></i></a></li>
