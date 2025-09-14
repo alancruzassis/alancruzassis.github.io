@@ -46,6 +46,10 @@
         color: #1E3050;
         text-decoration: none;
       }
+      .content{
+        background-color: #f9f8fa;
+        padding: 32px 0;
+      }
 
       
       main a:hover, main a:active, main a::selection{
@@ -71,9 +75,11 @@
       .mainHeader{
         padding: 1rem;
         margin: .5rem;
-        border: 1px solid #1E3050;
+        border: 1px solid #e2e8f0;
         border-radius: 1rem;
-        position: relative;     
+        position: relative;   
+        background-color: #ffffff; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
       }
 
       .mainHeader .acordeon{
@@ -117,7 +123,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        border: 1px solid #1E3050;
+        border: 1px solid #f8f9fa;
         border-radius: 1.1rem;
         color: #1E3050;
     }
@@ -200,7 +206,7 @@
     }
     
    
-    .perguntas .content{
+    .perguntas{
         color: #1E3050;
         background-color: transparent;
         border: none;
@@ -300,6 +306,17 @@
     .fatherPlus h4{
         font-weight: 300;
     }
+    .fatherPlus i{
+        font-size: 2em;
+    }
+    .fatherPlus i:hover{
+        color: #2e5c75;
+    }
+    .fatherPlus{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+    }
     
     .plus h4{
         color: #f1f1f1;
@@ -317,39 +334,11 @@
     .fatherPlus h4:hover{
             font-weight: 600;
     }
+    input:read-only{
+        background-color: #e7f2f1 !important;
+    }
+
     
-
-    footer{
-        display: flex;
-        flex-direction: row;
-        margin-top: 2em;
-        margin-left: 0.3em;
-        padding: 1.5em 1em;
-        border-top: 1px solid #f1f1f1;
-        width: 100%;
-        justify-content: space-evenly;
-    }
-    footer ul{
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        margin: 0;
-        font-size: 2em;
-        justify-content: space-around;
-        width: 40%;
-        max-width: 200px;
-        padding: 0;
-    }
-    footer div{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    footer .cruz{
-            display: none;
-    }
- 
     .acordeon button a{
         width: 100%;
     }
@@ -366,6 +355,80 @@
         flex-direction: row;
         justify-content: center;
     }
+    footer{
+			display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Montsserat', sans-serif;
+			font-size: 15px;
+			color: #2e5c75;	
+			width:100%;
+			left: 0px;
+			min-width: 100%;
+			background-color: #fff;
+			padding-top: 60px;
+			padding-bottom: 8px;
+			text-align: center;
+			margin: 0;
+			border: 0;
+			}
+        footer a{
+            text-decoration: none;
+            color: #2e5c75;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid #2e5c75;
+            margin-right: 20px;
+            font-size: 1.5em;
+        }
+        footer a:hover, ::selection{
+            background-color: #2e5c75;
+            color: #ffffff;
+            transition: all 0.4s;
+        }
+        .footerHeader{
+            display: flex; 
+            flex-direction: row; 
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 20px; 
+            margin: 1.5em 2em 2.5em 0;
+        }
+        .footerHeader i{
+            font-size: 23px;
+        }
+        footer h3{
+            font-size: 20px;
+            font-family: 'Inter', 'Montsserat', sans-serif;
+            text-align: left;
+            color: #2e5c75;
+            font-weight: bold;
+        }
+         footer section{
+            width:250px;
+        }
+        footer section p{
+            font-size: 1em;
+            font-family: 'Inter', 'Montsserat', sans-serif;
+            text-align: left;
+            color: #2e5c75;
+        }
+        .socialNav{
+            display: flex;
+            flex-direction: row;
+            margin: 2em 2em 2.5em 0;
+        }
+        .copyright{
+            border-top: 1px solid #dedede;
+            padding: 1.5em 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+        }
     @media only screen and (min-width: 768px) {
        
 
@@ -491,13 +554,14 @@
         };
                                 
     </script>
-    <div class="mainHeader">
+    <div class="content">
+        <div class="mainHeader">
         
        <header class="header">
                <div class="container d-flex justify-container-center">
         <div class="row">
             <div class="col-md-12">
-               <div id="chart_div" style="width: 400px; height: 120px;"></div>
+               <div id="chart_div" style="max-width: 400px; height: 120px;"></div>
             </div>
         </div>
 
@@ -506,82 +570,97 @@
                 <h1>Alcôometro</h1>
             </div>
         </header>
-    
-        <h3>Tipo de bebida <i class="fa-solid fa-wine-bottle"></i></h3>
-        <section class="acordeon" id="acordeonIdioma"> 
-            <select name="drinkType" class="trigger" id="triggerDrinkType1" onchange="speedmeter()" oninput="speedmeter()">
-                <option value="0">Selecione</option>
-                <option value="0.05">Cerveja</option>
-                <option value="0.125">Vinho</option>
-                <option value="0.4">Vodka</option>
-                <option value="0.4">Uísque</option>
-                <option value="0.4">Cachaça</option>
-                <option value="0.4">Gin</option>
-                <option value="0.4">Tequila</option>
-            </select>              
-        </section>
-        <h3>Recipiente <i class="fa-solid fa-wine-glass-empty"></i></h3>
-        <section class="acordeon" id="acordeonIdioma"> 
-            <select name="drinkType" class="trigger" id="triggerDrinkRec1" onchange="speedmeter()" oninput="speedmeter()">
-                <option value="0">Selecione</option>
-                <option value="269">Periguete (269mL)</option>
-                <option value="350">Lata (350mL)</option>
-                <option value="413">Latão (413mL)</option>
-                <option value="200">Copo americano (200mL)</option>
-                <option value="250">Copo médio (250mL)</option>
-                <option value="300">Copo grande (300mL)</option>
-                <option value="150">Taça (150mL)</option>
-                <option value="1">Mililitros (mL)</option>
-            </select>              
-        </section>
-        <h3>Quantidade por semana</h3>
-        <section class="acordeon" id="acordeonIdioma"> 
-            <input type="number" name="drinkType" class="trigger" id="inputDrinkNumber1" oninput="speedmeter()">
-        </input>              
-        </section>
-            <div class="fatherPlus">
-                <div class="plus">
-                    <h4>+</h4>
-                </div>
-                <h4>Adicionar bebida</h4>
-            </div>
-        </BR>
-        <h3>Doses de álcool por semana</h3>
-        <section class="acordeon" id="acordeonIdioma"> 
-            <input placeholder="Resultado" type="text" readonly name="drinkType" class="trigger" id="resultado">
-        </input>
-        </section>
-        <br>
-        <h3>Calorias do álcool</h3>
-        <section class="acordeon">
-            <input placeholder="Resultado" type="text" readonly class="trigger" id="resultado2">    
-        </input>
-        </section>
-        <p style="margin-left: 1em; " id="paes"></p>              
-        </section>
-        <section>
-            <BR></BR>
-            <h3>Implicações</h3>
-            <p>Não existe dose de álcool com risco zero à saúde segundo a OMS. Quanto menor for a ingestão, menor o risco de desenvolver doenças como problemas no coração, alguns tipos de câncer, cirrose hepática, distúrbios mentais e alcoolismo, sofrer ou provocar acidentes e se envolver em violência física.</p>
-            <p>O consumo de álcool pode atrapalhar o processo de emagrecimento. Cada grama de álcool gera 7 kcal, isso é mais que os carboidratos que geram 4 kcal por cada grama.</p>
+        <div>   
+                <h3>Tipo de bebida <i class="fa-solid fa-wine-bottle"></i></h3>
+                <section class="acordeon" id="acordeonIdioma"> 
+                    <select name="drinkType" class="trigger" id="triggerDrinkType1" onchange="speedmeter()" oninput="speedmeter()">
+                        <option value="0">Selecione</option>
+                        <option value="0.05">Cerveja</option>
+                        <option value="0.125">Vinho</option>
+                        <option value="0.4">Vodka</option>
+                        <option value="0.4">Uísque</option>
+                        <option value="0.4">Cachaça</option>
+                        <option value="0.4">Gin</option>
+                        <option value="0.4">Tequila</option>
+                    </select>              
+                </section>
+                <h3>Recipiente <i class="fa-solid fa-wine-glass-empty"></i></h3>
+                <section class="acordeon" id="acordeonIdioma"> 
+                    <select name="drinkType" class="trigger" id="triggerDrinkRec1" onchange="speedmeter()" oninput="speedmeter()">
+                        <option value="0">Selecione</option>
+                        <option value="269">Periguete (269mL)</option>
+                        <option value="350">Lata (350mL)</option>
+                        <option value="413">Latão (413mL)</option>
+                        <option value="200">Copo americano (200mL)</option>
+                        <option value="250">Copo médio (250mL)</option>
+                        <option value="300">Copo grande (300mL)</option>
+                        <option value="150">Taça (150mL)</option>
+                        <option value="1">Mililitros (mL)</option>
+                    </select>              
+                </section>
+                <h3>Quantidade por semana</h3>
+                <section class="acordeon" id="acordeonIdioma"> 
+                    <input type="number" name="drinkType" class="trigger" id="inputDrinkNumber1" oninput="speedmeter()">
+                </input>              
+                </section>
+                    <div class="fatherPlus">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <h4>Adicionar bebida</h4>
+                    </div>
+                </BR>
+                <h3>Doses de álcool por semana</h3>
+                <section class="acordeon" id="acordeonIdioma"> 
+                    <input placeholder="Resultado" type="text" readonly name="drinkType" class="trigger" id="resultado">
+                </input>
+                </section>
+                <br>
+                <h3>Calorias do álcool</h3>
+                <section class="acordeon">
+                    <input placeholder="Resultado" type="text" readonly class="trigger" id="resultado2">    
+                </input>
+                </section>
+                <p style="margin-left: 1em; " id="paes"></p>              
+                </section>
+                <section>
+                    <BR></BR>
+                    <h3>Implicações</h3>
+                    <p>Não existe dose de álcool com risco zero à saúde segundo a OMS. Quanto menor for a ingestão, menor o risco de desenvolver doenças como as do coração, alguns tipos de câncer, cirrose hepática, distúrbios mentais e alcoolismo.</p>
+                    <p>O consumo de álcool pode atrapalhar o processo de emagrecimento. Cada grama de álcool gera 7 kcal, isso é mais que os carboidratos que geram 4 kcal por cada grama.</p>
+                    <p>Monitorar o consumo é o primeiro passo para ter mais saúde e longevidade.</p>
+                    
+                </section>
+                <br>
             
-        </section>
-        <br>
-       
-    </div> <!--mainHeader-->
+            </div> <!--mainHeader-->
 
 
-        
+                
+        </div>
+    
+    </div>
     
     <footer>
-        <div><span>© 2024 <a href="https://alancruzassis.github.io">Dr. Alan Assis</a></span></div>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/alancruzassis/"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="https://www.instagram.com/dr.alanassis/"><i class="fa-brands fa-square-instagram"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
-        </ul>
-    </footer>
-
+        <div style="display: flex; flex-direction: row; gap: 4em;">
+            <section>
+                <div class="footerHeader">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <h3>Desenvolvedor</h3>
+                </div>
+                
+                <p><b style="font-weight: bold;">Dr. Alan Assis</b></p>
+                <p><i style="font-style: italic;">Nutricionista | CRN 5 24097</i></p>
+                <nav class="socialNav">
+                    <a href="https://www.instagram.com/dr.alanassis/" target="_blank" title="página no instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/alancruzassis/" target="_blank" title="página no linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/alanassis" target="_blank" title="página no github"><i class="fa-brands fa-github"></i></a>
+                </nav>
+            </section>
+            
+        </div>
+        <div class="copyright">
+		    <p>© 2025 DataAssis - Todos os direitos reservados</p>
+		</div>
+	</footer>
     <script src="https://kit.fontawesome.com/27d65a4a33.js" crossorigin="anonymous"></script>
     
 </body>
