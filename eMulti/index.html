@@ -308,13 +308,13 @@
         
         <div class="main">
             
-            <div>
-                <a href="#" target="_blank" class="btn">
+            <div onclick="avisoAdobe()">
+                <a href="fichaReferenciaModeloEditavel.pdf" target="_blank" class="btn">
                     <i class="fa-solid fa-square-poll-horizontal"></i> <div>Ficha de referência</div>
                 </a>
             </div>
             <div>
-                <a href="#" class="btn">
+                <a href="Modelo de PTS.docx" class="btn">
                     <i class="fa-solid fa-arrows-to-dot"></i>
                     <div>Modelo de PTS</div>
                 </a>
@@ -356,7 +356,7 @@
         </div>
         <div class="main">
             <div>
-                <a href="#" target="_blank" class="btn">
+                <a href="timbrado emulti.docx" target="_blank" class="btn">
                     <i class="fa-solid fa-award"></i> <div>Timbrado eMulti</div>
                 </a>
             </div>
@@ -364,11 +364,6 @@
                 <a class="btn">
                     <i class="fa-solid fa-message"></i>
                     <div>CI (PDF)</div>
-                </a>
-            </div>
-            <div>
-                <a href="#" target="_blank" class="btn">
-                    <i class="fa-solid fa-wifi"></i> <div>Wi-fi eMulti (sede)</div>
                 </a>
             </div>
             <div>
@@ -477,7 +472,10 @@
 
         </script>
         <script>
-           
+           function avisoAdobe(){
+            alert("Baixe e abra o arquivo com o edidor de PDF Adobe Acrobat para conseguir editar. \nCom o documento aberto no Adobe Acrobat clique em 'Preencher campos de formulário' no painel esquerdo (o ícone 'A' maiúsculo). Em seguida, clique no local desejado do documento e comece a digitar.");
+            open(fichaReferenciaModeloEditavel.pdf)
+           }
         </script>
 </body>
 </html>
