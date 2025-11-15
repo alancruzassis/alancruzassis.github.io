@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Criado por Dr. Alan Assis, Nutricionista, CRN 5 24097-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Repositório de ferramentas de trabalho da equipe eMulti de Conceição da Feira.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserat:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="vgpico.ico" >
+
+    <title>Repositório eMulti</title>
+
+<style>
+    html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        textarea:focus, input:focus{
+            outline: none;
+        }
+        body{
+            height:100%;
+            width: 100%;
+            color: #666666;
+            background-color: #fefefe;
+            display: flex;
+            flex-direction: column;
+            min-height:100vh;
+            font-family: Montserat, 'Montserat', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        html{
+            height:10%;
+            width: 100%;
+        }
+
+        .content{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            justify-content: space-evenly;    
+            width: 100%;
+            height: max-content;
+            padding-right: 4%;
+            padding-left: 4%;
+            padding-top: 1%;
+            padding-bottom: 4em;
+            box-sizing: border-box;
+            font-family:'Montserat', sans-serif;
+            font-size: 18px;
+            color: #333333;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+
+        header{
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            color: #3C3C3C;
+            padding: 10px 12px 10px 12px;
+            box-shadow: 0px 1px 2px 0px rgba(142, 142, 142, 0.75);
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        h1{
+            font-family: 'Montserat', sans-serif;
+            font-size: 40px;
+            font-weight: 800;
+            font-style: normal;
+        }
+        .logo_eMulti{
+            width: 15%;
+            min-width: 50px;
+            margin: 0px 22px;
+        }
+        .logo_prefeitura{
+            width: 18%;
+            min-width: 120px;
+            margin: 0px 22px;
+        }        
+        h2{
+            font-size: 24px;
+            font-family: 'Montserat', 'Montserat', sans-serif;
+            color: #444444;
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            text-align: Center;
+        }
+        .btn{
+            background-color: #FFD000;
+            color: #3C3C3C;
+            border-radius:0.5em;
+            padding: 15px 24px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: poMontserat;
+            border: 2px solid #00CF00;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: 'Montserat', 'Montserat', sans-serif;
+            width: 300px;
+            margin: 0.4em 0.4em;
+            text-decoration: none;
+        }
+        .btn:hover, ::selection{
+            background-color: #183EFF;
+            border: 2px solid #183EFF;
+            box-sizing: border-box;
+            color: #fff; 
+        }
+        .btn i{
+            font-size: 1.8em;
+            margin-right: 10px;
+        } 
+
+        .main{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            height: max-content;
+        }
+
+        hr{
+            border: 1px solid #e2e8f0;
+            margin: 20px 0;
+        }
+
+        input{
+            font-family: 'Montserat', sans-serif;
+        }
+        .inputNumber{
+            font-size: 18px;
+            height: 23px;
+            width: 100px;
+            padding: 2px;
+            margin: 5px 0px 18px 0px;
+            border: 1px solid #3C3C3C;
+           border-radius: 5px;
+           margin-right: 10px;
+           margin-left: 5px;
+           text-align: center;
+        }
+
+        .inputDate{
+            font-size: 18px;
+            height: 23px;
+            width: auto;
+            padding: 2px;
+            margin: 5px 0px 18px 0px;
+            border: 1px solid #3C3C3C;
+           border-radius: 5px;
+           text-align: center;
+        }
+
+        .flex-column{
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-spaceBetween{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        footer{
+			display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Montserat', sans-serif;
+			font-size: 15px;
+			color: #3C3C3C;	
+			width:100%;
+			left: 0px;
+			min-width: 100%;
+			background-color: #fff;
+			padding-top: 60px;
+			padding-bottom: 8px;
+			text-align: center;
+			margin: 0;
+			border: 0;
+			}
+        footer a{
+            text-decoration: none;
+            color: #3C3C3C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid #3C3C3C;
+            margin-right: 20px;
+            font-size: 1.5em;
+        }
+        footer a:hover, ::selection{
+            background-color: #3C3C3C;
+            color: #ffffff;
+            transition: all 0.4s;
+        }
+        .footerHeader{
+            display: flex; 
+            flex-direction: row; 
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 20px; 
+            margin: 1.5em 2em 2.5em 0;
+        }
+        .footerHeader i{
+            font-size: 23px;
+        }
+        footer h3{
+            font-size: 20px;
+            font-family: 'Montserat', 'Montserat', sans-serif;
+            text-align: left;
+            color: #3C3C3C;
+            font-weight: bold;
+        }
+         footer section{
+            width:250px;
+        }
+        footer section p{
+            font-size: 1em;
+            font-family: 'Montserat', 'Montserat', sans-serif;
+            text-align: left;
+        }
+        .socialNav{
+            display: flex;
+            flex-direction: row;
+            margin: 2em 2em 2.5em 0;
+        }
+        .copyright{
+            border-top: 1px solid #dedede;
+            padding: 1.5em 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+        }
+        @media only screen and (max-width: 900px) {
+            
+            .divH4{
+            font-size: 10px;
+            }
+            .logo_eMulti{
+            width: 15%;
+            min-width: 50px;
+            margin: 8px 5px;
+        }
+        .logo_prefeitura{
+            width: 18%;
+            min-width: 50px;
+            margin: 8px 5px;
+        }     
+        h1{
+            font-size: 1.3em;
+        }   
+        }
+    
+</style>    
+</head>
+<body>
+    <header>
+        <img class="logo_eMulti" src="logo_eMulti.webp" alt="logo eMulti">
+        <h1>Repositório eMulti</h1>
+        <img class="logo_prefeitura" src="logo_prefeitura.webp" alt="Logo Prefeitura de Conceição da Feira">
+    </header>
+<div class="content">
+    <main>
+        <div>
+            <h2>Ferramentas clínicas</h2>
+        </div>
+        
+        <div class="main">
+            
+            <div>
+                <a href="#" target="_blank" class="btn">
+                    <i class="fa-solid fa-square-poll-horizontal"></i> <div>Ficha de referência</div>
+                </a>
+            </div>
+            <div>
+                <a href="#" class="btn">
+                    <i class="fa-solid fa-arrows-to-dot"></i>
+                    <div>Modelo de PTS</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <div>Decl. de comparecimento</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-users"></i>
+                    <div>Ficha atv. coletiva</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <div>Anamnese Nutricional</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-file-medical"></i>
+                    <div>Solicitação de exame / proc.</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-music"></i>
+                    <div>Músicas Ed. Física</div>
+                </a>
+            </div>
+        </div>
+        <hr>
+                <div>
+            <h2>Ferramentas administrativas</h2>
+        </div>
+        <div class="main">
+            <div>
+                <a href="#" target="_blank" class="btn">
+                    <i class="fa-solid fa-award"></i> <div>Timbrado eMulti</div>
+                </a>
+            </div>
+            <div>
+                <a class="btn">
+                    <i class="fa-solid fa-message"></i>
+                    <div>CI (PDF)</div>
+                </a>
+            </div>
+            <div>
+                <a href="#" target="_blank" class="btn">
+                    <i class="fa-solid fa-wifi"></i> <div>Wi-fi eMulti (sede)</div>
+                </a>
+            </div>
+            <div>
+                <a href="#" target="_blank" class="btn">
+                    <i class="fa-solid fa-fingerprint"></i>
+                    <div>Folha de ponto</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <div>Inventários</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-mobile-button"></i>
+                    <div>Termo de entrega de celular</div>
+                </a>
+            </div>
+            <div>
+                <a href="#" target="_blank" class="btn">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>E-mail eMulti</div>
+                </a>
+            </div>
+            <div>
+                <a href="#" target="_blank" class="btn">
+                    <i class="fa-solid fa-calendar-week"></i>
+                    <div>Escala semanal</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="erro">    
+            <div class="erroDtMaior" id="erroDtMaior" style="display: none;">
+                Por favor, selecione uma data inicial &lt; data final.
+            </div>
+            <div class="erroMenorCinco" id="erroMenorCinco" style="display: none;">
+                    Você selecionou um período menor que 5 dias. O resultado pode estar impreciso. Saiba mais no artigo da referência.
+            </div>
+        </div>
+    </main>
+   
+</div>
+
+</div>
+
+    <footer>
+        <div style="display: flex; flex-direction: row; gap: 4em;">
+            <section>
+                <div class="footerHeader">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Sede eMulti</h3>
+                </div>
+                
+                <p><b style="font-weight: bold;">Rua Pedro Barreiros, SN, Centro</b></p>
+                <p><i style="font-style: italic;">Conceição da Feira - BA, 44320-000</i></p>
+            </section>
+            
+        </div>
+        <div class="copyright">
+		    <p>© 2025 Prefeitura Municipal de Conceição da Feira - Todos os direitos reservados</p>
+		</div>
+	</footer>
+    
+    <script>
+        alert("AVISO: Estas são informações internas, só devem ser compartilhadas com público geral mediante aprovação da coordenação.")
+    </script>
+     <script type="text/javascript">
+
+        function PressEnter(nextinputId){
+            if(event.keyCode == 13){
+                document.getElementById(nextinputId).focus();     
+                return false;           
+            }
+        }
+    </script>
+    <script>
+        function lerMais(){ //Expandir/Retrair texto descrição dos autores
+        let maisTexto = document.getElementById('maisTexto');
+        let btnLerMais = document.getElementById("btnLerMais");
+        
+        if(maisTexto.style.display==="inline-block"){
+        maisTexto.style.display="none";
+        btnLerMais.innerHTML="&#9660;";
+        } else{
+        maisTexto.style.display="inline-block";
+        btnLerMais.innerHTML="▲";
+        }
+        }
+
+        function lerMais2(){ //Expandir/Retrair texto descrição dos autores
+        let maisTexto2 = document.getElementById('maisTexto2');
+        let btnLerMais2 = document.getElementById("btnLerMais2");
+        
+        if(maisTexto2.style.display==="inline-block"){
+        maisTexto2.style.display="none";
+        btnLerMais2.innerHTML="&#9660;";
+        } else{
+        maisTexto2.style.display="inline-block";
+        btnLerMais2.innerHTML="▲";
+        }
+        }
+
+
+        </script>
+        <script>
+           
+        </script>
+</body>
+</html>
