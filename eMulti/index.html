@@ -272,6 +272,162 @@
             text-align: center;
             margin-top: 50px;
         }
+        /* Fundo escuro */
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(2px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+    /* Caixa do modal */
+    .modal-content {
+        background: white;
+        padding: 28px;
+        border-radius: 12px;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0px 4px 16px rgba(0,0,0,0.25);
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .modal-content h2 {
+        margin-bottom: 15px;
+        color: #3C3C3C;
+        font-size: 22px;
+    }
+
+    .modal-content p {
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .modal-content button {
+        background: #183EFF;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .modal-content button:hover {
+        opacity: 0.9;
+    }
+    /* Fundo do modal */
+    .modal-adobe {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(2px);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    /* Caixa do modal */
+    .modal-adobe-content {
+        background: white;
+        padding: 28px;
+        border-radius: 12px;
+        max-width: 420px;
+        text-align: center;
+        box-shadow: 0px 4px 16px rgba(0,0,0,0.25);
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .modal-adobe-content h2 {
+        margin-bottom: 15px;
+        color: #3C3C3C;
+        font-size: 22px;
+    }
+
+    .modal-adobe-content p {
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .modal-adobe-content button {
+        background: #183EFF;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .modal-adobe-content button:hover {
+        opacity: 0.9;
+    }
+    /* Fundo do modal */
+    .modal-indisp {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(2px);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    /* Caixa */
+    .modal-indisp-content {
+        background: white;
+        padding: 28px;
+        border-radius: 12px;
+        max-width: 420px;
+        text-align: center;
+        box-shadow: 0px 4px 16px rgba(0,0,0,0.25);
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .modal-indisp-content h2 {
+        margin-bottom: 15px;
+        color: #3C3C3C;
+        font-size: 22px;
+    }
+
+    .modal-indisp-content p {
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .modal-indisp-content button {
+        background: #183EFF;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .modal-indisp-content button:hover {
+        opacity: 0.9;
+    }
+
         @media only screen and (max-width: 900px) {
             
             .divH4{
@@ -294,6 +450,7 @@
     
 </style>    
 </head>
+
 <body>
     <header>
         <img class="logo_eMulti" src="logo_eMulti.webp" alt="logo eMulti">
@@ -320,6 +477,12 @@
                 </a>
             </div>
             <div>
+                <a href="https://www.canva.com/design/DAG4y5OHC3M/1G98I7l7oft9ER_nZkOLBQ/edit?utm_content=DAG4y5OHC3M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"  target="_blank" class="btn">
+                    <i class="fa-solid fa-qrcode"></i>
+                    <div>Orientação via QR Code</div>
+                </a>
+            </div>
+            <div>
                 <a href="#"  target="_blank" class="btn">
                     <i class="fa-solid fa-file-contract"></i>
                     <div>Decl. de comparecimento</div>
@@ -328,7 +491,13 @@
             <div>
                 <a href="#"  target="_blank" class="btn">
                     <i class="fa-solid fa-users"></i>
-                    <div>Ficha atv. coletiva</div>
+                    <div>Ficha ativ. coletiva</div>
+                </a>
+            </div>
+            <div>
+                <a href="solicitacaoSESAB.pdf"  target="_blank" class="btn">
+                    <i class="fa-solid fa-file-medical"></i>
+                    <div>Solicitação de exame / proc.</div>
                 </a>
             </div>
             <div>
@@ -339,14 +508,32 @@
             </div>
             <div>
                 <a href="#"  target="_blank" class="btn">
-                    <i class="fa-solid fa-file-medical"></i>
-                    <div>Solicitação de exame / proc.</div>
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <div>Anamnese Fisioterapêutica</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <div>Anamnese de Ed. Física</div>
                 </a>
             </div>
             <div>
                 <a href="#"  target="_blank" class="btn">
                     <i class="fa-solid fa-music"></i>
                     <div>Músicas Ed. Física</div>
+                </a>
+            </div>
+            <div>
+                <a href="#"  target="_blank" class="btn">
+                    <i class="fa-solid fa-music"></i>
+                    <div>Músicas Psicologia</div>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.saude.ba.gov.br/wp-content/uploads/2018/08/Tabela-CIAP-2.pdf"  target="_blank" class="btn">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <div>CIAP-2</div>
                 </a>
             </div>
         </div>
@@ -396,6 +583,12 @@
                     <div>Escala semanal</div>
                 </a>
             </div>
+            <div>
+                <a href="#" target="_blank" class="btn">
+                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+                    <div>Ficha de Vitamina A</div>
+                </a>
+            </div>
         </div>
         
         <div class="erro">    
@@ -430,9 +623,6 @@
 		</div>
 	</footer>
     
-    <script>
-        alert("AVISO: Estas são informações internas, só devem ser compartilhadas com público geral mediante aprovação da coordenação.")
-    </script>
      <script type="text/javascript">
 
         function PressEnter(nextinputId){
@@ -473,9 +663,92 @@
         </script>
         <script>
            function avisoAdobe(){
-            alert("Baixe e abra o arquivo com o edidor de PDF Adobe Acrobat para conseguir editar. \nCom o documento aberto no Adobe Acrobat clique em 'Preencher campos de formulário' no painel esquerdo (o ícone 'A' maiúsculo). Em seguida, clique no local desejado do documento e comece a digitar.");
-            open(fichaReferenciaModeloEditavel.pdf)
+            alert("Baixe e abra o arquivo com o edidor de PDF Adobe Acrobat Reader para conseguir editar. \nCom o documento aberto no Adobe Acrobat clique em 'Preencher campos de formulário' no painel esquerdo (o ícone 'A' maiúsculo). Em seguida, clique no local desejado do documento e comece a digitar.");
+            window.open(fichaReferenciaModeloEditavel.pdf);
            }
         </script>
+        <!-- Modal de Aviso -->
+    <div id="modalAviso" class="modal">
+        <div class="modal-content">
+            <h2>⚠️ AVISO IMPORTANTE</h2>
+            <p>Estas são informações internas e só devem ser compartilhadas com o público geral mediante aprovação da coordenação.</p>
+            <button id="fecharModal">Entendi</button>
+        </div>
+    </div>
+    <script>
+    const modal = document.getElementById("modalAviso");
+    const fecharModal = document.getElementById("fecharModal");
+
+    // Abre o modal ao carregar a página
+    window.onload = function() {
+        modal.style.display = "flex";
+    };
+
+    // Fecha o modal ao clicar no botão
+    fecharModal.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Fecha se clicar fora da caixa
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+    <!-- Modal Aviso Adobe -->
+    <div id="modalAdobe" class="modal-adobe">
+        <div class="modal-adobe-content">
+            <h2>📄 Aviso sobre o arquivo PDF</h2>
+            <p>
+                Para editar corretamente o documento, baixe e abra o arquivo usando o 
+                <b>Adobe Acrobat Reader</b>.<br><br>
+                Com o documento aberto, clique em<br>
+                <b>"Preencher campos de formulário"</b> no painel esquerdo (ícone com o “A” maiúsculo).
+            </p>
+
+            <button id="modalAdobeOk">Entendi</button>
+        </div>
+    </div>
+    <!-- Modal Arquivo Indisponível -->
+    <div id="modalIndisponivel" class="modal-indisp">
+        <div class="modal-indisp-content">
+            <h2>⛔ Arquivo Indisponível</h2>
+            <p>
+                Este arquivo ainda não está disponível no repositório.<br>
+                Por favor, contate a coordenação do eMulti para mais informações.
+            </p>
+            <button id="modalIndispOk">Ok</button>
+        </div>
+    </div>
+    <script>
+        // Seleciona todos os links que apontam para "#"
+        document.addEventListener("DOMContentLoaded", function () {
+            const botõesIndisponíveis = document.querySelectorAll('a[href="#"]');
+            const modal = document.getElementById("modalIndisponivel");
+            const btnOk = document.getElementById("modalIndispOk");
+
+            // Quando clicar num desses botões → abre modal
+            botõesIndisponíveis.forEach(btn => {
+                btn.addEventListener("click", function (event) {
+                    event.preventDefault(); // impede navegação
+                    modal.style.display = "flex";
+                });
+            });
+
+            // Fechar modal ao clicar em "Ok"
+            btnOk.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            // Fechar clicando fora da caixa
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
