@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Painel de Ventiladores</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+h1{
+    text-align:center;
+    margin-top:20px;
+}
+
+#hora{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.led{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    margin:10px auto;
+}
+
+.on{
+    background:#00ff88;
+    box-shadow:0 0 15px #00ff88;
+}
+
+.off{
+    background:#444;
+}
+
+.status{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.timer{
+    font-size:26px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.info{
+    margin-top:10px;
+    font-size:14px;
+    color:#cbd5f5;
+}
+
+@media (max-width:500px){
+
+    h1{
+        font-size:20px;
+    }
+
+    .timer{
+        font-size:22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Painel de Ventiladores</h1>
+
+<div id="hora"></div>
+
+<div class="container">
+
+<div class="card" id="G1">
+<h2>G1</h2>
+<div class="led"></div>
+<div class="status"></div>
+<div class="timer"></div>
+<div class="info last"></div>
+<div class="info next"></div>
+</div>
+
+<div class="card" id="G2">
+<h2>G2</h2>
+<div class="led"></div>
+<div class="status"></div>
+<div class="timer"></div>
+<div class="info last"></div>
+<div class="info next"></div>
+</div>
+
+<div class="card" id="G4">
+<h2>G4</h2>
+<div class="led"></div>
+<div class="status"></div>
+<div class="timer"></div>
+<div class="info last"></div>
+<div class="info next"></div>
+</div>
+
+</div>
+
+<script>
+
+const ciclo = 30
+const tempoLigado = 10
+
+const ventiladores = {
+
+G4:"00:10",
+G1:"00:25",
+G2:"00:29"
+
+}
+
+function minutosDoDia(data){
+
+return data.getHours()*60 + data.getMinutes()
+
+}
+
+function minutosHora(str){
+
+const [h,m] = str.split(":").map(Number)
+
+return h*60 + m
+
+}
+
+function formatarHora(min){
+
+min = (min + 1440) % 1440
+
+let h = Math.floor(min/60).toString().padStart(2,"0")
+
+let m = Math.floor(min%60).toString().padStart(2,"0")
+
+return `${h}:${m}`
+
+}
+
+function segParaTempo(seg){
+
+let m = Math.floor(seg/60)
+
+let s = seg%60
+
+return `${m}:${s.toString().padStart(2,"0")}`
+
+}
+
+function atualizar(){
+
+const agora = new Date()
+
+document.getElementById("hora").innerHTML =
+"Hora atual: "+agora.toLocaleTimeString()
+
+const agoraMin = minutosDoDia(agora)
+
+const agoraSeg = agora.getSeconds()
+
+for(const nome in ventiladores){
+
+const inicio = minutosHora(ventiladores[nome])
+
+let diff = agoraMin - inicio
+
+if(diff<0) diff += 1440
+
+const pos = diff % ciclo
+
+const ligado = pos < tempoLigado
+
+const ciclos = Math.floor(diff/ciclo)
+
+const ultima = inicio + ciclos*ciclo
+
+let proxima
+
+let segundosRestantes
+
+if(ligado){
+
+proxima = ultima + tempoLigado
+segundosRestantes = (tempoLigado-pos)*60 - agoraSeg
+
+}else{
+
+proxima = ultima + ciclo
+segundosRestantes = (ciclo-pos)*60 - agoraSeg
+
+}
+
+const card = document.getElementById(nome)
+
+const led = card.querySelector(".led")
+
+const status = card.querySelector(".status")
+
+const timer = card.querySelector(".timer")
+
+const last = card.querySelector(".last")
+
+const next = card.querySelector(".next")
+
+led.className = "led " + (ligado ? "on":"off")
+
+status.innerHTML = ligado ? "LIGADO" : "DESLIGADO"
+
+timer.innerHTML = segParaTempo(segundosRestantes)
+
+last.innerHTML = "Última ativação: "+formatarHora(ultima)
+
+next.innerHTML = "Próxima ativação: "+formatarHora(proxima)
+
+}
+
+}
+
+setInterval(atualizar,1000)
+
+atualizar()
+
+</script>
+
+</body>
+</html>
