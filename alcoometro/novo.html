@@ -247,7 +247,7 @@ function calcular(){
     document.getElementById("risco").innerText = doses ? risco : "";
 
     /* 💡 NUDGE */
-    let corrida = (kcalSemana/(3,8*60)*60).toFixed(1);
+    let corrida = (kcalSemana/(3.8*60)*60).toFixed(1);
     document.getElementById("nudge").innerText =
         doses ? `🏃‍♀️ Isso exigiria ~${corrida}min de caminhada média/semana para compensar` : "";
 
