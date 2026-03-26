@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CompareSup Dashboard</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+}
+
+/* HEADER */
+header {
+  background: #d21404;
+  color: white;
+  padding: 7px;
+  text-align: center;
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2.5em;
+}
+
+/* CONTAINER */
+.container {
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* GRID */
+.grid {
+  display: flex;
+  gap: 15px;
+}
+
+/* PRODUTOS */
+.fieldset {
+  flex: 1;
+  border: 2px solid transparent;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input:read-only {
+  background: #eee;
+}
+
+/* DESTAQUE */
+.best {
+  border: 2px solid green !important;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+  }
+}
+
+/* INFO */
+.info {
+  background: #eef6ff;
+  padding: 10px;
+  border-left: 4px solid #2196f3;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>CompareSup</h1>
+  <p>Dashboard de custo-benefício</p>
+</header>
+
+<div class="container">
+
+<!-- ===================== PÓ ===================== -->
+<div class="card">
+
+<h2>Comparador (Pó)</h2>
+
+<select id="selectPo" oninput="selector('po')">
+  <option value="Nutriente">Selecione</option>
+  <option value="Proteína">Proteína</option>
+  <option value="Creatina">Creatina</option>
+  <option value="Carboidrato">Carboidrato</option>
+  <option value="Glutamina">Glutamina</option>
+  <option value="BCAA">BCAA</option>
+  <option value="Beta-alanina">Beta-alanina</option>
+  <option value="Arginina">Arginina</option>
+</select>
+
+<div class="grid" oninput="calcularPo()">
+
+  <div class="fieldset">
+    <h3>A</h3>
+    <input placeholder="Marca">
+    <input id="p1" type="number" placeholder="Porção (g)">
+    <input id="n1" type="number" placeholder="Quantidade do nutriente (g)">
+    <input id="e1" type="number" placeholder="Peso da embalagem (g)">
+    <input id="pr1" type="number" placeholder="Preço (R$)">
+    <input id="r1" readonly placeholder="R$/100g">
+  </div>
+
+  <div class="fieldset">
+    <h3>B</h3>
+    <input placeholder="Marca">
+    <input id="p2" type="number" placeholder="Porção (g)">
+    <input id="n2" type="number" placeholder="Quantidade do nutriente (g)">
+    <input id="e2" type="number" placeholder="Peso da embalagem (g)">
+    <input id="pr2" type="number" placeholder="Preço (R$)">
+    <input id="r2" readonly placeholder="R$/100g">
+  </div>
+
+  <div class="fieldset">
+    <h3>C</h3>
+    <input placeholder="Marca">
+    <input id="p3" type="number" placeholder="Porção (g)">
+    <input id="n3" type="number" placeholder="Quantidade do nutriente (g)">
+    <input id="e3" type="number" placeholder="Peso da embalagem (g)">
+    <input id="pr3" type="number" placeholder="Preço (R$)">
+    <input id="r3" readonly placeholder="R$/100g">
+  </div>
+
+</div>
+
+<div class="info">
+💡 Preço ÷ peso da embalagem ÷ porção × nutriente por porção × 100
+</div>
+
+</div>
+
+<!-- ===================== CAPSULA ===================== -->
+<div class="card">
+
+<h2>Comparador (Cápsulas)</h2>
+
+<select id="selectCap" oninput="selector('cap')">
+  <option value="Ômega 3">Ômega 3</option>
+  <option value="Cafeína">Cafeína</option>
+  <option value="Coenzima Q10">Coenzima Q10</option>
+  <option value="Colágeno">Colágeno</option>
+  <option value="Resveratrol">Resveratrol</option>
+  <option value="Beta-caroteno">Beta-caroteno</option>
+</select>
+
+<div class="grid" oninput="calcularCap()">
+
+  <div class="fieldset">
+    <h3>A</h3>
+    <input placeholder="Marca">
+    <input id="dose1" type="number" placeholder="Dose por cápsula (mg)">
+    <input id="caps1" type="number" placeholder="Qtd cápsulas">
+    <input id="pricec1" type="number" placeholder="Preço (R$)">
+    <input id="resc1" readonly placeholder="R$/1000mg">
+  </div>
+
+  <div class="fieldset">
+    <h3>B</h3>
+    <input placeholder="Marca">
+    <input id="dose2" type="number" placeholder="Dose por cápsula (mg)">
+    <input id="caps2" type="number" placeholder="Qtd cápsulas">
+    <input id="pricec2" type="number" placeholder="Preço (R$)">
+    <input id="resc2" readonly placeholder="R$/1000mg">
+  </div>
+
+  <div class="fieldset">
+    <h3>C</h3>
+    <input placeholder="Marca">
+    <input id="dose3" type="number" placeholder="Dose por cápsula (mg)">
+    <input id="caps3" type="number" placeholder="Qtd cápsulas">
+    <input id="pricec3" type="number" placeholder="Preço (R$)">
+    <input id="resc3" readonly placeholder="R$/1000mg">
+  </div>
+
+</div>
+
+<div class="info">
+💡 Preço ÷ (quantidade total do ativo) × 1000
+</div>
+
+</div>
+
+</div>
+
+<footer>
+  Desenvolvido por <strong>Dr. Alan Assis</strong><br>
+  Nutricionista e Programador <i>front end</i><br>
+  © 2026 CompareSup
+</footer>
+
+<script>
+
+/* SELECT DINÂMICO */
+function selector(tipo) {
+  let value = tipo === 'po'
+    ? document.getElementById('selectPo').value
+    : document.getElementById('selectCap').value;
+
+  document.querySelectorAll(`#${tipo === 'po' ? '' : ''} input`).forEach(() => {});
+}
+
+/* -------- PÓ -------- */
+function calcularPo() {
+
+  let res = [];
+
+  for (let i = 1; i <= 3; i++) {
+    let p = +document.getElementById('p'+i).value;
+    let n = +document.getElementById('n'+i).value;
+    let e = +document.getElementById('e'+i).value;
+    let pr = +document.getElementById('pr'+i).value;
+
+    if (!p || !n || !e || !pr) continue;
+
+    let total = (n/p)*e;
+    let r = (pr/total)*100;
+
+    document.getElementById('r'+i).value = r.toFixed(2);
+    res[i-1] = r;
+  }
+
+  highlight(res);
+}
+
+/* -------- CAPSULA -------- */
+function calcularCap() {
+
+  let res = [];
+
+  for (let i = 1; i <= 3; i++) {
+    let d = +document.getElementById('dose'+i).value;
+    let c = +document.getElementById('caps'+i).value;
+    let p = +document.getElementById('pricec'+i).value;
+
+    if (!d || !c || !p) continue;
+
+    let total = d*c;
+    let r = (p/total)*1000;
+
+    document.getElementById('resc'+i).value = r.toFixed(2);
+    res[i-1] = r;
+  }
+
+  highlight(res);
+}
+
+/* -------- MELHOR -------- */
+function highlight(res) {
+  const cards = document.querySelectorAll('.fieldset');
+  cards.forEach(c => c.classList.remove('best'));
+
+  const valid = res.filter(r => !isNaN(r));
+  if (!valid.length) return;
+
+  const min = Math.min(...valid);
+
+  res.forEach((r, i) => {
+    if (r === min) cards[i].classList.add('best');
+  });
+}
+
+</script>
+
+</body>
+</html>
