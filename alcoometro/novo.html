@@ -254,7 +254,7 @@ function calcular(){
     /* 📊 Atualiza gráfico */
     if(chart){
         data.setValue(0,1, doses);
-        chart.draw(data);
+        chart.draw(data, options);
     }
 
     salvarLocal();
