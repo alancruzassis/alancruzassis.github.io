@@ -137,7 +137,16 @@ Entre elas as do coração, alguns tipos de câncer, cirrose hepática, distúrb
 
 <script>
 let bebidas = [];
-
+var options = {
+        width:200,
+        height:200,
+        redFrom:10,
+        redTo:50,
+        yellowFrom:1,
+        yellowTo:10,
+        minorTicks:5,
+        max:50
+    };
 /* ===== GRÁFICO ===== */
 google.charts.load('current', {'packages':['gauge']});
 let chart, data;
@@ -150,14 +159,10 @@ google.charts.setOnLoadCallback(() => {
 
     chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-    chart.draw(data, {
-        width:200, height:200,
-        redFrom:14, redTo:50,
-        yellowFrom:7, yellowTo:14,
-        minorTicks:5,
-        max:50
-    });
+    
+    chart.draw(data, options);
 });
+
 
 /* ===== FUNÇÕES ===== */
 
@@ -188,10 +193,11 @@ function renderBebidas(){
 
             <select onchange="updateBebida(${index}, 'volume', this.value)">
                 <option value="0">Recipiente</option>
-                <option value="350">Lata (350ml)</option>
-                <option value="600">Garrafa (600ml)</option>
-                <option value="150">Taça (150ml)</option>
-                <option value="50">Dose (50ml)</option>
+                <option value="350">Lata (350mL)</option>
+                <option value="600">Garrafa (600mL)</option>
+                <option value="150">Taça (150mL)</option>
+                <option value="50">Dose (50mL)</option>
+                <option value="1">Mililitros (mL)</option>
             </select>
 
             <input type="number" placeholder="Qtd/semana"
@@ -218,7 +224,7 @@ function calcular(){
         }
     });
 
-    let doses = totalGramas / 14;
+    let doses = totalGramas / 10;
     let kcalSemana = totalGramas * 7;
 
     document.getElementById("resultado").value = doses.toFixed(1);
@@ -232,7 +238,7 @@ function calcular(){
 
     /* ⚠️ RISCO (sem baixo risco) */
     let risco = "";
-    if(doses < 14){
+    if(doses < 10){
         risco = "🟡 Consumo relevante";
     } else{
         risco = "🔴 Alto risco";
