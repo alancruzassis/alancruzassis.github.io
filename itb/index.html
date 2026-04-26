@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<title>Calculadora ITB</title>
+
+<!-- jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family:  'Segoe UI', sans-serif;
+    background: #f2f4f7;
+}
+
+.container {
+    max-width: 420px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 22px;
+    text-align: center;
+    color: #333;
+}
+
+.section {
+    margin-top: 15px;
+}
+
+.section h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #2c7be5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: #28a745;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+/* FOOTER */
+footer {
+  background: transparent;
+  color: gray;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.good { background: #d4edda; color: #155724; }
+.warning { background: #fff3cd; color: #856404; }
+.danger { background: #f8d7da; color: #721c24; }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Índice Tornozelo-Braquial</h1>
+<br>
+        <!-- TORNOZELOS PRIMEIRO -->
+        <div class="section">
+            <h2>Tornozelo Direito</h2>
+            <div class="input-group">
+                <input type="number" id="tornozeloDirSis" placeholder="Sistólica (ex: 120)">
+                <input type="number" id="tornozeloDirDia" placeholder="Diastólica (ex: 80)">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Tornozelo Esquerdo</h2>
+            <div class="input-group">
+                <input type="number" id="tornozeloEsqSis" placeholder="Sistólica (ex: 120)">
+                <input type="number" id="tornozeloEsqDia" placeholder="Diastólica (ex: 80)">
+            </div>
+        </div>
+
+        <!-- BRAÇOS DEPOIS -->
+        <div class="section">
+            <h2>Braço Direito</h2>
+            <div class="input-group">
+                <input type="number" id="bracoDirSis" placeholder="Sistólica (ex: 120)">
+                <input type="number" id="bracoDirDia" placeholder="Diastólica (ex: 80)">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Braço Esquerdo</h2>
+            <div class="input-group">
+                <input type="number" id="bracoEsqSis" placeholder="Sistólica (ex: 120)">
+                <input type="number" id="bracoEsqDia" placeholder="Diastólica (ex: 80)">
+            </div>
+        </div>
+
+        <button onclick="calcularITB()">Calcular ITB</button>
+        <button class="secondary" onclick="gerarPDF()"><i class="fa-solid fa-circle-arrow-down"></i> Salvar em PDF </button>
+
+        <div id="resultado" class="result"></div>
+    </div>
+
+    <!--Página para orientações de como aferir-->
+
+    <footer>
+        Desenvolvido por <strong>Dr. Alan Assis</strong><br>
+        Nutricionista e Programador <i>front end</i><br>
+        © 2026 - <i>Todos os direitos reservados</i>
+    </footer>
+</div>
+
+<script>
+let ultimoResultado = "";
+
+function calcularITB() {
+    let bracoDir = parseFloat(document.getElementById("bracoDirSis").value);
+    let bracoEsq = parseFloat(document.getElementById("bracoEsqSis").value);
+    let tornozeloDir = parseFloat(document.getElementById("tornozeloDirSis").value);
+    let tornozeloEsq = parseFloat(document.getElementById("tornozeloEsqSis").value);
+    let bracoDirDia = parseFloat(document.getElementById("bracoDirDia").value);
+    let bracoEsqDia = parseFloat(document.getElementById("bracoEsqDia").value);
+    let tornozeloDirDia = parseFloat(document.getElementById("tornozeloDirDia").value);
+    let tornozeloEsqDia = parseFloat(document.getElementById("tornozeloEsqDia").value);
+
+    if (!bracoDir || !bracoEsq || !tornozeloDir || !tornozeloEsq) {
+        alert("Preencha todas as pressões sistólicas!");
+        return;
+    }
+
+    let maiorBraco = Math.max(bracoDir, bracoEsq);
+    let maiorTornozelo = Math.max(tornozeloDir, tornozeloEsq);
+    let itb = (maiorTornozelo / maiorBraco).toFixed(2);
+
+    let resultado = document.getElementById("resultado");
+    resultado.style.display = "block";
+
+    let classificacao = "";
+    let faixa = "";
+
+    if (itb >= 0.9 && itb <= 1.3) {
+        classificacao = "Boa circulação das pernas e coração";
+        faixa = "Faixa de referência: 0,9 a 1,3";
+        resultado.className = "result good";
+    } else if (itb < 0.9) {
+        classificacao = "Atenção! Possível obstrução";
+        faixa = "Referência de normalidade: 0,9 a 1,3";
+        resultado.className = "result warning";
+    } else if (itb > 1.4) {
+        classificacao = "Risco aumentado de infarto por calcificação das artérias do coração";
+        faixa = "Referência de normalidade: 0,9 a 1,3";
+        resultado.className = "result danger";
+    } else {
+        classificacao = "Zona limítrofe";
+        faixa = "Risco um pouco aumentado de calcificação arterial. Referência de normalidade: 0,9 a 1,3";
+        resultado.className = "result warning";
+    }
+
+    ultimoResultado = `
+ITB: ${itb}
+${classificacao}
+${faixa}
+`;
+
+    resultado.innerHTML = `
+        ITB: ${itb} <br>
+        ${classificacao} <br>
+        <small>${faixa}</small>
+    `;
+}
+
+function gerarPDF() {
+    if (!ultimoResultado) {
+        alert("Calcule o ITB antes de exportar!");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+     let bracoDir = parseFloat(document.getElementById("bracoDirSis").value);
+    let bracoEsq = parseFloat(document.getElementById("bracoEsqSis").value);
+    let tornozeloDir = parseFloat(document.getElementById("tornozeloDirSis").value);
+    let tornozeloEsq = parseFloat(document.getElementById("tornozeloEsqSis").value);
+    let bracoDirDia = parseFloat(document.getElementById("bracoDirDia").value);
+    let bracoEsqDia = parseFloat(document.getElementById("bracoEsqDia").value);
+    let tornozeloDirDia = parseFloat(document.getElementById("tornozeloDirDia").value);
+    let tornozeloEsqDia = parseFloat(document.getElementById("tornozeloEsqDia").value);
+   // Data 
+    let agora = new Date();
+    let dataHora = agora.toLocaleString("pt-BR");
+    
+    doc.setTextColor(51, 51, 51);
+    doc.setFont("montserat", "bold");
+    doc.setFontSize(22);
+    doc.text("Índice Tornozelo-Braquial (ITB)", 10, 20);
+    doc.setFontSize(14);
+    doc.text("Pressões Arteriais (mmHg)", 10, 35);
+    doc.setFontSize(12);
+    
+    doc.setFont("montserat", "normal");
+    doc.text(`Braço Direito:     ${bracoDir}`, 10, 45);
+    doc.text(`/        ${bracoDirDia}`, 61, 45);
+    
+    doc.text(`Braço Esquerdo: ${bracoEsq}`, 10, 50);
+    doc.text(`/        ${bracoEsqDia}`, 61, 50);
+
+    doc.text(`Tornozelo Direito:     ${tornozeloDir}`, 10, 65);
+    doc.text(`/        ${tornozeloDirDia}`, 61, 65);
+
+    doc.text(`Tornozelo Esquerdo: ${tornozeloEsq}`, 10, 70);
+    doc.text(`/        ${tornozeloEsqDia}`, 61, 70);
+
+    doc.setFontSize(11);
+    doc.setFont("montserat", "italic");
+    doc.text(`Data e hora: ${dataHora}`, 10, 80);
+    
+    doc.setFontSize(14);
+    doc.setFont("montserat", "bold"); 
+    doc.text("Resultado", 10, 95);
+    
+    doc.setFontSize(12);
+    doc.setFont("montserat", "normal");
+    
+    let linhas = doc.splitTextToSize(ultimoResultado, 180);
+    doc.text(linhas, 10, 100);
+
+    doc.line(10, 25, 200, 25); // linha horizontal
+
+
+    doc.save("resultado_itb.pdf");
+}
+</script>
+ <script src="https://kit.fontawesome.com/27d65a4a33.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
